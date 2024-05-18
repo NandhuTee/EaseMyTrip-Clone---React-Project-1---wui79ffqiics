@@ -1,0 +1,243 @@
+.flightSearchSection{
+    background-color: #2f81ed;
+    background-image: linear-gradient(to right, #2F80ED, #56CCF2);
+    width: 100%;
+    height: 17vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.searchBarFlightDiv{
+    height: 50%;
+    width: 80%;
+    display: flex;
+    overflow: hidden;
+    gap: 10px;
+    border-radius: 6px;
+}
+.mainDivFlightRecordSearch{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsla(0,0%,100%,.1);
+}
+.searchFromFlightRecord{
+    height: 90%;
+    width: 95%;
+    
+}
+.searchToFlightRecord{
+    height: 90%;
+    width: 95%;
+    
+}
+.inputFlightRecord{
+    height: 60%;
+    width: 100%;
+    background-color: hsla(0,0%,100%,.1);
+    border-radius: 5px;
+    border: none;
+    margin-top: 5px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+}
+.inputFlightRecord:focus{
+    outline: none;
+}
+.searchButtonFlightRecords{
+    height: 80%;
+    width: 100%;
+    background-image: linear-gradient(to right, #56CCF2);
+    margin-left: 1.5%;
+    display: flex;
+    align-items: center;
+    border: 1.5px solid white;
+    justify-content: center;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 5px;
+    cursor: pointer;
+}
+
+/* Flight Lists */
+.flightDataBox{
+    border: 1px solid #c9d7e1;
+    box-shadow: rgb(0 0 0 / 20%) 0px 3px 7px;;
+    background-color: #fff;
+    width: 100%;
+    /* height: 150px; */
+    height: 100%;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+/* Fliter Data */
+
+.flightDataPage{
+    margin-top: 12px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #FFF;
+    position: sticky;
+}
+.flightDataDeparture ul{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.flightDataDeparture ul li{
+    list-style: none;
+    font-size: 9px;
+    font-weight: 600;
+    height: 64px;
+    width: 56px;
+    border: .7px solid #dfdfdf;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .filterImageSun{
+    margin-top: 5px;
+    width: 28px;
+    height: 25px;
+    background: url(https://flight.easemytrip.com/Content/CSS/filter-sprite.png);
+    background-position: -5px -42px;
+  }
+  .filterImageMid{
+    margin-top: 5px;
+    width: 24px;
+    height: 25px;
+    background: url(https://flight.easemytrip.com/Content/CSS/filter-sprite.png);
+    background-position: -38px -43px;
+  }
+  .filterImageEve{
+    margin-top: 5px;
+    width: 20px;
+    height: 25px;
+    background: url(https://flight.easemytrip.com/Content/CSS/filter-sprite.png);
+    background-position: -66px -42px;
+  }
+  .filterImageNight{
+    margin-top: 5px;
+    width: 16px;
+    height: 25px;
+    background: url(https://flight.easemytrip.com/Content/CSS/filter-sprite.png);
+    background-position: -95px -43px;
+  }
+
+  .dropDownArrowChild{
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate( 45deg );
+    position: relative;
+    top: -1px;
+    margin-left: 10px 
+  }
+  .travellerInput{
+    border: 0;
+    text-align: center;
+    border-left: 1px solid #dcdcdc;
+    border-right: 1px solid #dcdcdc;
+    font-size: 14px;
+    width: 30px;
+    height: 31px;
+    background: #f6f9ff;
+}
+.travellerInput:focus{
+    outline: none;
+}
+.swapImageSection{
+    width: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.filterSideBar{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+.bookNowInRow{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.durationFlightRecords{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.flighttimeDurationSection{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    gap: 7px;
+}
+.mobileViewBtn{
+    display: none;
+}
+@media(max-width:600px){
+    .flightSearchSection{
+        height: auto;
+    }
+    .searchBarFlightDiv{
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        gap: 15px;
+    }
+    .mainDivFlightRecordSearch{
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 1px solid #e0dede;
+    }
+    .searchFromFlightRecord{
+        margin-bottom: 5px;
+    }
+    .searchToFlightRecord{
+        margin-bottom: 5px;
+    }
+    .dividerFlightRecord{
+        display: none;
+    }
+    .swapImageSection{
+        display: none;
+    }
+    .filterSideBar{
+        display: none;
+    }
+    .bookNowInRow{
+        display: none;
+    }
+    .durationFlightRecords{
+        display: none;
+    }
+    .flighttimeDurationSection{
+        justify-content: space-between;
+    }
+    .mobileViewBtn{
+        display: block;
+        width: 95%;
+        margin-bottom: 5px;
+    }
+}

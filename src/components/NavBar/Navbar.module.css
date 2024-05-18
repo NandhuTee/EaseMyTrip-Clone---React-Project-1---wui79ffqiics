@@ -1,0 +1,392 @@
+.navbarEase{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.navContent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    
+}
+.navClickSection{
+    height: 100%;
+    width: 80vw;
+    margin-left: 10px;
+    display: flex;
+}
+.navLogoSection{
+    width: 10vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logoEase{
+    width: 115px;
+    margin-top: 2px;
+}
+.navRouteContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+
+}
+.clickSection{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 5px;
+    width: 100%;
+   
+}
+/* Text Styles */
+.clickFLIGHTSH3{
+    font-weight: 500;
+    font-size: 13px;
+    cursor: pointer;
+    color: #000000;
+    padding: 19px 9px;
+    text-transform: uppercase;
+}
+.clickFLIGHTSH3:hover{
+    color: #ef6614;
+    border-bottom: 5px solid #ef6614;
+}
+.clickHOTELSH3{
+    font-weight: 500;
+    font-size: 13px;
+    cursor: pointer;
+    color: #000000;
+    padding: 19px 9px;
+    text-transform: uppercase;
+    
+}
+.clickHOTELSH3:hover{
+    color: #ef6614;
+    border-bottom: 5px solid #ef6614;
+}
+.clickTRAINSH3{
+    font-weight: 500;
+    font-size: 13px;
+    cursor: pointer;
+    color: #000000;
+    padding: 19px 9px;
+    text-transform: uppercase; 
+}
+.clickTRAINSH3:hover{
+    color: #ef6614;
+    border-bottom: 5px solid #ef6614;
+}
+.clickBUSH3{
+    font-weight: 500;
+    font-size: 13px;
+    cursor: pointer;
+    color: #000000;
+    padding: 19px 9px ;
+    text-transform: uppercase;
+    
+}
+.clickBUSH3:hover{
+    color: #ef6614;
+    border-bottom: 5px solid #ef6614;
+}
+
+.joinIcon{
+    width: 50px;
+}
+.navJoinSection{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 15vw;
+}
+.navUser{
+    width: 20vw;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+/* my Account */
+.myAcount{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 155px;
+    height: 34px;
+    margin-top: 0.1em;
+    gap: 10px;
+    overflow-y: hidden; 
+    overflow-x: hidden;
+}
+
+.userIconNav{
+    width: 30px; /* Width of the circular container */
+    height: 30px; /* Height of the circular container */
+    background-color: white; /* White background color for the circle */
+    border-radius: 50%; /* Make the container circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* margin-top: 4em;
+    margin-left: 15em; */
+}
+.iconMan{
+    margin-top: 35px;
+    margin-right: 17px;
+    width: 350;
+}
+.accountBox{
+    position: relative;
+    box-shadow: 1px 2px 5px black;
+    background-color: white;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1;
+    cursor: default;
+   
+
+}
+.dropdownContent {
+    width: 200px;
+    height: 100%;
+    right: 3px;
+    margin-top: 2em;
+    z-index: 2;
+    
+}
+.dropdownContent {
+    position: absolute;
+    display: none;
+}
+.myAcount:hover .dropdownContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: auto;
+}
+
+.bookingP{
+    font-size: 13px;
+    color: #000;
+}
+
+/* 24x7 Helpline */
+
+
+.dropdownhelpContent {
+    position: absolute;
+    display: none;
+}
+.myhelp:hover .dropdownhelpContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: auto; 
+}
+.myhelp{
+    cursor: pointer;
+}
+.navAcount{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 4vh;
+}
+.dividerLogin{
+    margin-top: 5px;
+}
+.avatar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+   
+}
+.loginBtnSection{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+    margin-top: 5px;
+    
+    
+}
+.btnLogin{
+    height: 5vh;
+    width: 12vw;
+    border-radius: 5px;
+    background-color: #fff;
+   font-size: 13px;
+   font-weight: 600;
+   cursor: pointer;
+    color: #ef6614;
+    border: 1px solid #ef6614;
+}
+.linkSection{
+    color: black;
+  text-decoration: none;
+  
+}
+
+/* Modal Login */
+.modalLoginSection{
+    position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 38%;
+   border: none;
+   border-radius: 5px;
+   box-shadow: 1px 2px 5px black;
+   background-color: white;
+   padding: 4;
+   display: flex;
+   justify-content: center;
+}
+.closeBtn{
+    width: 11px;
+    height: 11px;
+    background: url(https://www.easemytrip.com/images/new-login/home-sub-sprite.png) no-repeat -96px -24px;
+    opacity: .3;
+    background-size: 200px 39px;
+    position: absolute;
+    top: 22px;
+    right: 30px;
+    cursor: pointer;
+}
+/* Modal SignUp */
+.modalSignUpSection{
+    position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 38%;
+   border: none;
+   border-radius: 5px;
+   box-shadow: 1px 2px 5px black;
+   background-color: white;
+   padding: 4;
+   display: flex;
+   justify-content: center;
+}
+.closeBtnSignUp{
+    width: 11px;
+    height: 11px;
+    background: url(https://www.easemytrip.com/images/new-login/home-sub-sprite.png) no-repeat -96px -24px;
+    opacity: .3;
+    background-size: 200px 39px;
+    position: absolute;
+    top: 22px;
+    right: 25px;
+    cursor: pointer;
+}
+.myBookingSection{
+    background-image: linear-gradient(261deg,#56CCF2, #2F80ED );
+    height: 215px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+.myBookingDiv{
+    background-color: white;
+    width: 90%;
+    height: 555px;
+    border-radius: 10px;
+    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.myBookingDiv::-webkit-scrollbar {
+    display: none;
+  }
+.boxMyBooking{
+    display: flex;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+    height: 100px;
+    gap: 10px;
+    padding: 30px;
+}
+.summeryBox{
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+    height: 150px;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+   
+    justify-content: space-between;
+    background-color: white;
+}
+@media(max-width:600px){
+    
+    .navClickSection{
+        display: flex;
+        flex-direction: column;
+        width: 70vw;
+    }
+    .navbarEase{
+        width: 100%;
+        height: 100%!important;
+
+    }
+    .navContent{
+        width: 100%;
+        height: 140px;
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+    }
+    .navLogoSection{
+        width: 45%;
+    }
+    .navRouteContent{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+    }
+    .navUser{
+        height: 140px;
+        width: 30vw;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+    }
+    .myAcount{
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .navJoinSection{
+        display: none;
+    }
+    .userIconNav{
+        margin-top: 25px;
+    }
+    .btnLogin{
+        width: 90%;
+    }
+    .modalLoginSection{
+        width: 95%;
+    }
+    .modalSignUpSection{
+        width: 95%;
+    }
+    .dropdownContent{
+        margin-top: 3.5em;
+    }
+}
