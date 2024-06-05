@@ -21,9 +21,9 @@ function BusBooking(){
     const departureDay= moment(busdepartureDate).format("ddd");
     const departureDate= moment(busdepartureDate).format("DD MMM YYYY");
     const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [firstNameError, setFirstNameError] = useState("");
-  const [lastNameError, setLastNameError] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [firstNameError, setFirstNameError] = useState("");
+    const [lastNameError, setLastNameError] = useState("");
     const handlePayment = (busfare, bookingType, busId ,travelare) => {
       if (!firstName.trim()) {
         setFirstNameError("First Name is required");
@@ -41,7 +41,7 @@ function BusBooking(){
     };
     const fetchSingleFlightData = async () => {
         try {
-          const projectID = "8nbih316dvo1";
+          const projectID = "wui79ffqiics";
           const response = await fetch(
             `https://academics.newtonschool.co/api/v1/bookingportals/bus/${busBookingId}`,
             {

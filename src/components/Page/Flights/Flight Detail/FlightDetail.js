@@ -10,7 +10,7 @@ function FlightDetail(){
 
     const fetchSingleFlightData = async () => {
         try {
-          const projectID = "8nbih316dvo1";
+          const projectID = "wui79ffqiics";
           const response = await fetch(
             `https://academics.newtonschool.co/api/v1/bookingportals/flight/${flightId}`,
             {

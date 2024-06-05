@@ -10,7 +10,7 @@ function MyBooking(){
     useEffect(() => {
         const fetchBookingdata = () => {
           const api = "https://academics.newtonschool.co/api/v1/bookingportals/booking";
-          const productid = "8nbih316dvo1";
+          const productid = "wui79ffqiics";
           fetch(api, {
             method: "GET",
             headers: {

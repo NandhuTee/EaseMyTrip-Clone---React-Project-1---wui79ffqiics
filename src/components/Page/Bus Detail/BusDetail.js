@@ -9,15 +9,15 @@ import BusDetailFrom from "../Drop Down/BusDetailFrom";
 import BusDetailTo from "../Drop Down/BusDetailTo";
 
 function BusDetail(){
-    const {busdepartureDate, setBusDepartureDate,busCity, busToCity} = useAuth();
-    const [busDetailFromOpen, setBusDetailFromOpen] = useState(false);
-    const [busDetailToOpen, setBusDetailToOpen] = useState(false);
-    const [searchResultsBus, setSearchResultsBus] = useState([]);
-  const [errorPost, setErrorPost] = useState("");
-  const [selectedOption, setSelectedOption] = useState(0);
-  const [sliderValue, setSliderValue] = useState(2000);
-  const [value, setValue] = useState("$gte");
-  const [field, setField] = useState("fare");
+     const {busdepartureDate, setBusDepartureDate,busCity, busToCity} = useAuth();
+     const [busDetailFromOpen, setBusDetailFromOpen] = useState(false);
+     const [busDetailToOpen, setBusDetailToOpen] = useState(false);
+     const [searchResultsBus, setSearchResultsBus] = useState([]);
+     const [errorPost, setErrorPost] = useState("");
+     const [selectedOption, setSelectedOption] = useState(0);
+     const [sliderValue, setSliderValue] = useState(2000);
+     const [value, setValue] = useState("$gte");
+     const [field, setField] = useState("fare");
 
   const handleSliderChange = (event) => {
     setSliderValue(event.target.value);
@@ -45,13 +45,11 @@ function BusDetail(){
       setField(type);
       setValue(key === value ? "$gte":key);
       setSelectedOption(data);
-      // setPage(1);
-      // setSearchHotelResults([]);
-      // handleHotelSearch();
+      
     };
     async function BusSearch() {
         try {
-          const projectID = "8nbih316dvo1";
+          const projectID = "wui79ffqiics";
           const dayAbbreviation = moment(busdepartureDate).format("ddd");
           const apiUrl = `https://academics.newtonschool.co/api/v1/bookingportals/bus?&day=${dayAbbreviation}&search={"source":"${busCity}","destination":"${busToCity}"}&filter={"${field}":{"${value}":${selectedOption}}}`;
           const response = await fetch(apiUrl, {

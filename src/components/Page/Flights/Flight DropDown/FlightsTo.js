@@ -21,7 +21,7 @@ const FlightsTo = ({ onclose }) => {
 
   useEffect(() => {
     const api = `https://academics.newtonschool.co/api/v1/bookingportals/airport?search={"city":"${airport}"}`;
-    const projectId = "8nbih316dvo1";
+    const projectId = "wui79ffqiics";
 
     const fetchData = () => {
       fetch(api, {
