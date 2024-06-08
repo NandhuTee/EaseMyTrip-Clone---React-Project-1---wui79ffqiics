@@ -122,7 +122,7 @@ function Hotels() {
     try {
       setIsFetching(true);
       //const projectID = "2zqsmiro66wm";
-      const projectID = "wui79ffqiics";
+      const projectID = "uojmjpx76p25";
       const formattedDate = moment(hotelDepartureDate).format("dddd");
       let apiUrlHotel = `https://academics.newtonschool.co/api/v1/bookingportals/hotel?search={"location":"${hotelLocation}"}&day="${formattedDate}"&filter={"${field}":{"${value}":${selectedOption}}}&limit=10&page=${page}`;
       const response = await fetch(apiUrlHotel, {

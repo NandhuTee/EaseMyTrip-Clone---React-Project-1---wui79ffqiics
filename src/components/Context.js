@@ -9,13 +9,13 @@ export function AuthProvider({ children }) {
   const [hotelLocation, setHotelLocation] = useState("Mumbai");
   const [hotelDepartureDate, setHotelDepartureDate] = useState("");
   const [flightdepartureDate, setFlightDepartureDate] = useState("");
-  //const [traindepartureDate, setTrainDepartureDate] = useState("");
+  const [traindepartureDate, setTrainDepartureDate] = useState("");
   const [busdepartureDate, setBusDepartureDate] = useState("");
   const [hotelId, setHotelId] = useState("");
   const [flightId, setFlightId] = useState("");
 
-  //const [trainCity, setTrainCity] = useState(["New Delhi"]);
-  //const [trainToCity, setTrainToCity] = useState(["Pune Junction"]);
+  const [trainCity, setTrainCity] = useState(["New Delhi"]);
+  const [trainToCity, setTrainToCity] = useState(["Pune Junction"]);
   const [busCity, setBusCity] = useState(["Mumbai, Maharashtra"]);
   const [busToCity, setBusToCity] = useState(["Pune, Maharashtra"]);
   const [AirportFrom, setAriportFrom] = useState([
@@ -37,7 +37,7 @@ export function AuthProvider({ children }) {
   const [flightBookingId, setFlightBookingId] = useState("");
   const [busBookingId, setBusBookingId] = useState("");
   const [travelare, setTravelare] = useState("");
- // const [trainBookingId, setTrainBookingId] = useState("");
+  const [trainBookingId, setTrainBookingId] = useState("");
   const [hotelBookingId, setHotelBookingId] = useState("");
   const [seatCount, setSeatCount] = useState(1);
   const [seatHotelCount, setSeatHotelCount] = useState(1);
@@ -74,9 +74,9 @@ export function AuthProvider({ children }) {
         flightdepartureDate,
         setFlightDepartureDate,
         flightId, setFlightId,
-       /* traindepartureDate, setTrainDepartureDate,
+        traindepartureDate, setTrainDepartureDate,
         trainCity, setTrainCity,
-        trainToCity, setTrainToCity,*/
+        trainToCity, setTrainToCity,
         busCity, setBusCity,
         busToCity, setBusToCity,
         busdepartureDate, setBusDepartureDate,
@@ -95,7 +95,7 @@ export function AuthProvider({ children }) {
         seatHotelChildrenCount, setSeatHotelChildrenCount,
         hotelBookingId, setHotelBookingId,
         busBookingId, setBusBookingId,
-       // trainBookingId, setTrainBookingId,
+        trainBookingId, setTrainBookingId,
         fare, setFare,
         bookingId, setBookingId,
         bookingType, setBookingType,

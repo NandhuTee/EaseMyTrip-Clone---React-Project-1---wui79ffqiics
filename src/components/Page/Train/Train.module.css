@@ -1,0 +1,480 @@
+.trainBooking{
+    background-color: #2f81ed;
+    background-image: linear-gradient(to right, #2F80ED, #56CCF2);
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+}
+.headtrainSearchbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 5vh;
+    margin-top: 30px;
+
+}
+.captionTrain{
+    width: 50%;
+    font-size: 26px;
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchBarTrain{
+    background-color: #fff;
+    height: 10vh;
+    width: 80%;
+    display: flex;
+    overflow: hidden;
+    border-radius: 6px;
+    margin-top: 5em;
+}
+.mainDivTrainSearch{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mainDivTrainSearch:hover{
+    background-color: #bfdef85d;
+}
+.searchFromTrain{
+    height: 90%;
+    width: 95%;
+}
+.pInputTrain{
+    font-weight: 500;
+    color: #737373;
+    font-size: 14px;
+
+}
+ .swapDiv{
+    width: 2%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+ }
+ .inputTrain{
+    width: 100%;
+    border: 0.5px solid lightgray;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #737373;
+    border: none;
+    background-color: transparent;
+ }
+ .inputTrain:focus{
+    outline: none;
+ }
+ .searchToTrain{
+    height: 90%;
+    width: 95%;
+ }
+ .searchDepartureTrain{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .searchDepartureTrain:hover{
+    background-color: #bfdef85d;
+ }
+ .trainhomeDeparture{
+    width: 92%;
+    height: 90%;
+}
+.departureHeading{
+    display: flex;
+    gap: 10px;
+}
+.searchButtonTrain{
+    height: 100%;
+    width: 14%;
+    background-color: #ef6614;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+}
+.boxTrain{
+    height: 90%;
+    width: 32%;
+    box-shadow: 2px 2.5px 5px -1px #ccc;
+    background: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ccc;
+    justify-content: space-evenly;
+    align-items: center;
+    gap:10px;
+}
+.offerHeadingT{
+    height: 5vh;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.headingDivT{
+    height: 90%;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.headingOffersT{
+    font-size: 28px !important;
+    font-weight: 700 !important;
+}
+.hotelOffersSectionT{
+    height: 45vh;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-y: auto;
+    gap: 10px;
+}
+.trainOfersBoxes{
+    height: 95%;
+    width: 22%;
+  box-sizing: border-box; 
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 10px;
+  background-color: rgba(250, 253, 255, 1);
+  box-shadow: 0 0 7px rgb(0 -1 6 / 6%) inset;
+  border-radius: 15px;
+  border: 1px solid #F5F5F5;
+}
+.offersImagedivT{
+    height: 95%;
+    width: 95%;
+    margin-top: 7px;
+}
+.trainOffersImage{
+    height: 70%;
+    width: 100%;
+    border-radius: 10px;
+}
+.imageOffersTrain{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.descriptionTrainoffer{
+    font-size: 13px;
+    font-weight: 600;
+    width: 100%;
+    color: #172033;
+    margin-top: 10px;
+}
+/* Train Data */
+.trainDataSection{
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 7px rgb(0 0 0 / 17%);
+    margin-top: 10px;
+}
+.bookingTrainData{
+    float: left;
+   width: 100%;
+   border: 1px solid #b8d0e5;
+   background: #ffffff;
+   border-radius: 4px;
+   box-shadow: 0 0 6px rgb(64 64 64 / 21%);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+.bookingHeader{
+    width: 100%;
+   font-size: 18px;
+   color: #1a1a1a;
+   height: 50px;
+   line-height: 50px;
+   background: linear-gradient(90deg, #c7dffe 0%, #d8f2ff 100%);
+   border-top-left-radius: 4px;
+   border-top-right-radius: 4px;
+   display: flex;
+   gap: 5px;
+}
+.trainbookingImg{
+    float: left;
+    content: " ";
+    background: url(https://railways.easemytrip.com/Content/Train/img/train-ico.svg);
+    width: 32px;
+    height: 32px;
+    margin-top: 10px;
+    background-size: 100%;
+}
+.trainBookingDetails{
+    width: 100%;
+   float: left;
+   border: 1px solid #dad6d6;
+   margin-bottom: 0px;
+   border-radius: 4px;
+   background-color:#fff ;
+   margin-top: 15px;
+   box-shadow: 0 0 3px rgba(0,0,0,.2);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 15px;
+}
+.trainBookingSImgM{
+    width: 90%;
+    height: 1px;
+    border-bottom: 1px dotted #b0aeae;
+    float: right;
+}
+.trainStartImg{
+    float: left;
+    content: " ";
+    background: url(https://railways.easemytrip.com/Content/Train/img/img-sprite.png);
+    width: 10px;
+    height: 10px;
+    background-position: -290px -58px;
+    margin-top: -2px;
+}
+.trainBookingMImg{
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dotted #b0aeae;
+    float: left;
+    position: relative;
+    margin-top: 24px;
+}
+.trainMidleImg{
+    width: 20px;
+    height: 20px;
+   
+    background: #fff url(https://railways.easemytrip.com/Content/Train/img/duration-clock.png);
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: -10.5px;
+    background-position: 0 0;
+}
+.trainBookingLImgM{
+    width: 90%;
+    height: 1px;
+    border-bottom: 1px dotted #b0aeae;
+    float: left;
+}
+.trainLastImg{
+    float: right;
+    content: " ";
+    background: url(https://railways.easemytrip.com/Content/Train/img/img-sprite.png);
+    width: 10px;
+    height: 10px;
+    background-position: -287px -58px;
+    margin-top: -2px;
+}
+.personalDetailTrain{
+    float: left;
+    width: 100%;
+    margin-top: 40px;
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgb(64 64 64 / 21%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.PersbookingImg{
+    float: left;
+    content: " ";
+    background: url(https://flight.easemytrip.com/Content/img/traveller/img-sprite.png);
+    width: 35px;
+    height: 35px;
+    background-position: -92px -85px;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+.personalDetail{
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.21);
+    width: 95%;
+    height: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #b8d0e5;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.persnolDataTrainFName{
+    height: 30px;
+}
+.persnolDataTrainFName:focus{
+    outline: none;
+ 
+ }
+ .persnolDataTrainLName{
+    height: 30px;
+ }
+ .persnolDataTrainLName:focus{
+    outline: none;
+ }
+ .trainBookingAmont{
+    float: left;
+   width: 100%;
+   border: 1px solid #b8d0e5;
+   background: #ffffff;
+   border-radius: 4px;
+   box-shadow: 0 0 6px rgb(64 64 64 / 21%);
+ }
+ .trainBokkingAmountHeader{
+    width: 100%;
+    background: linear-gradient(90deg, #c7dffe 0%, #d8f2ff 100%);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+ }
+ .PersPaymentmg{
+    float: left;
+    content: " ";
+    background: url(https://bus.easemytrip.com/NewTravellerCss/img/img-sprite-v2.png);
+    width: 35px;
+    height: 35px;
+    background-position: -227px -3px;
+    margin-top: 11px;
+ }
+ .paymentLeftSection{
+    width: 28%;
+    float: left;
+    padding: 0;
+    background: #f8f8f8;
+    border-right: 1px solid #ccc;
+    height: 100vh;
+}
+.paymentUpiInput{
+    margin-bottom: 2%;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    border: 1px solid #d7d5d5;
+    padding-left: 2%;
+    color: #000;
+    font-size: 14px;
+    border-radius: 4px
+}
+.paymentUpiInput:focus{
+    outline: none;
+}
+@media(max-width:600px){
+    .trainBooking{
+       justify-content: space-evenly;
+       height: auto;
+    }
+    .headtrainSearchbar{
+    height: auto;
+    }
+    .captionTrain{
+        width: 70%;
+    }
+    .searchBarTrain{
+        flex-direction: column;
+        height: auto;
+        gap: 7px;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .mainDivTrainSearch{
+        width: 100%;
+        margin-top: 5px;
+        border-bottom: 1px solid #e0dede;
+    }
+    .swapTIcon{
+        display: none;
+    }
+    .dividerTrain{
+        display: none;
+    }
+    .searchDepartureTrain{
+        width: 100%;
+        border-bottom: 1px solid #e0dede;
+
+    }
+    .searchButtonTrain{
+        width: 95%;
+        border-radius: 40px;
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+    .h3SearchBtnTrain{
+        height: 5vh;
+        display: flex;
+        align-items: center;
+    
+    }
+    .searchFromTrain{
+        margin-bottom: 5px;
+    }
+    .searchToTrain{
+        margin-bottom: 5px;
+    }
+    .trainhomeDeparture{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .boxTrain{
+        width: 100%;
+    }
+    .offerHeadingT{
+        width: 100%;
+        height: auto;
+    }
+    .headingDivT{
+        width: 100%;
+    }
+    .trainOfersBoxes{
+        width: 50%;
+    }
+    .offersImagedivT{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .trainOffersImage{
+        height: 50%;
+    }
+    .persnolDataTrainFName{
+        height: 5vh;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+    .persnolDataTrainLName{
+        height: 5vh;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+    .paymentLeftSection{
+        display: none;
+    }
+
+}

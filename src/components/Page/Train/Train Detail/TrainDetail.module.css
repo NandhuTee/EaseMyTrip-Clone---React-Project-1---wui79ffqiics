@@ -1,0 +1,90 @@
+.TrainSearchSection{
+    background-color: #2f81ed;
+    background-image: linear-gradient(to right, #2F80ED, #56CCF2);
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.searchBarTrainDiv{
+    height: 50%;
+    width: 80%;
+    display: flex;
+    overflow: hidden;
+    gap: 17px;
+    border-radius: 6px;
+}
+.mainDivTrainRecordSearch{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+.searchFromTrainRecord{
+    height: 90%;
+    width: 95%;
+}
+.searchToTrainRecord{
+    height: 90%;
+    width: 95%;
+
+}
+.inputTrain{
+    width: 80%;
+    border: 0.5px solid lightgray;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 16px;
+    color: #000;
+
+    border: none;
+ }
+ .inputTrain:focus{
+    outline: none;
+ }
+ .searchButtonTrainRecords{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, #56CCF2);
+    margin-left: 1.5%;
+    display: flex;
+    align-items: center;
+    border: 1.5px solid white;
+    justify-content: center;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 5px;
+    cursor: pointer;
+ }
+.trainDataPage{
+    margin-top: 12px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #FFF;
+    border: 1px solid #E3DFDF;
+    position: sticky;
+}
+@media(max-width:600px){
+    .TrainSearchSection{
+        height: auto;
+    }
+    .searchBarTrainDiv{
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        gap: 15px;
+    }
+    .mainDivTrainRecordSearch{
+        width: 100%;
+        height: 5vh;
+    }
+}
+ 

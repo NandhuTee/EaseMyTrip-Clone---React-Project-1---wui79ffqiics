@@ -23,7 +23,6 @@ function Navbar() {
       setDropdownOpen(true);
     };
   
-
     const closeDropdown = () => {
       setDropdownOpen(false);
     };

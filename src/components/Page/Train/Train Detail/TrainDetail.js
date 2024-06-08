@@ -1,23 +1,25 @@
 import React,{useState,useEffect} from "react";
 import Navbar from "../../../components/NavBar/Navbar";
-import Classes from "../Bus.module.css";
+import Classes from "./TrainDetail.module.css";
 import { useAuth } from "../../../components/Context";
 import DatePicker from "react-datepicker";
 import moment from "moment";
-import BusList from "./BusList";
-import BusDetailFrom from "../Drop Down/BusDetailFrom";
-import BusDetailTo from "../Drop Down/BusDetailTo";
+import TrainFromDetail from "../DropDown/TrainFromDetail";
+import TrainToDetail from "../DropDown/TrainToDetail";
+import TrainData from "./TrainData";
 
-function BusDetail(){
-    const {busdepartureDate, setBusDepartureDate,busCity, busToCity} = useAuth();
-    const [busDetailFromOpen, setBusDetailFromOpen] = useState(false);
-    const [busDetailToOpen, setBusDetailToOpen] = useState(false);
-    const [searchResultsBus, setSearchResultsBus] = useState([]);
+function TrainDetail(){
+    const {traindepartureDate, setTrainDepartureDate,trainCity,trainToCity} = useAuth();
+    const [trainFromOpen, setTrainFromOpen] = useState(false);
+    const [trainToOpen, setTrainToOpen] = useState(false);
+    const [searchResultsTrain, setSearchResultsTrain] = useState([]);
   const [errorPost, setErrorPost] = useState("");
   const [selectedOption, setSelectedOption] = useState(0);
   const [sliderValue, setSliderValue] = useState(2000);
+
   const [value, setValue] = useState("$gte");
   const [field, setField] = useState("fare");
+  
 
   const handleSliderChange = (event) => {
     setSliderValue(event.target.value);
@@ -25,19 +27,18 @@ function BusDetail(){
     const CustomInput = ({ value, onClick }) => (
         <input
           type="text"
-          className={Classes.inputBusDetail}
+          className={Classes.inputTrain}
           value={moment(value).format("DD MMM YYYY")}
           onClick={onClick}
           readOnly
         />
       );
-      const handleBusDetailCityInput = () => {
-        setBusDetailFromOpen(!busDetailFromOpen);
+      const handleTrainCityInput = () => {
+        setTrainFromOpen(!trainFromOpen);
       };
-    const handleBusDetailCityToInput = () => {
-        setBusDetailToOpen(!busDetailToOpen);
+    const handleTrainCityToInput = () => {
+        setTrainToOpen(!trainToOpen);
       };
-
     const handleCheckboxRatingChange = (value) => {
       setSelectedOption(value === selectedOption ? 0 : value);
     };
@@ -49,11 +50,12 @@ function BusDetail(){
       // setSearchHotelResults([]);
       // handleHotelSearch();
     };
-    async function BusSearch() {
+  
+    async function trainSearch() {
         try {
           const projectID = "wui79ffqiics";
-          const dayAbbreviation = moment(busdepartureDate).format("ddd");
-          const apiUrl = `https://academics.newtonschool.co/api/v1/bookingportals/bus?&day=${dayAbbreviation}&search={"source":"${busCity}","destination":"${busToCity}"}&filter={"${field}":{"${value}":${selectedOption}}}`;
+          const dayAbbreviation = moment(traindepartureDate).format("ddd");
+          const apiUrl = `https://academics.newtonschool.co/api/v1/bookingportals/train?&day=${dayAbbreviation}&search={"source":"${trainCity}","destination":"${trainToCity}"}&filter={"${field}":{"${value}":${selectedOption}}}`;
           const response = await fetch(apiUrl, {
             method: "GET",
             headers: {
@@ -62,7 +64,7 @@ function BusDetail(){
           });
           if (response.ok) {
             const data = await response.json();
-            setSearchResultsBus(data.data.buses);
+            setSearchResultsTrain(data.data.trains);
           } else {
             const errorData = await response.json();
             setErrorPost(errorData.message);
@@ -73,53 +75,55 @@ function BusDetail(){
         }
       }
       useEffect(() => {
-        BusSearch();
+        trainSearch();
       }, [selectedOption,field,value]);
     return(
         <div>
             <Navbar/>
-            <div className={Classes.BusSearchSection}>
-        <div className={Classes.searchBarBusDiv} >
-            
-          <div className={Classes.mainDivBusRecordSearch}>
+            <div className={Classes.TrainSearchSection}>
+        <div className={Classes.searchBarTrainDiv} >
+            <div className="w-[3%] max-[600px]:w-[15%] h-[100%] flex items-center max-[600px]:mt-[10px]">
+                <img className="w-[100%]" src="https://www.easemytrip.com/images/train-img/train-icon.svg"/>
+            </div>
+          <div className={Classes.mainDivTrainRecordSearch}>
             <div
-              onClick={handleBusDetailCityInput}
-              className={Classes.searchFromBusRecord}
+              onClick={handleTrainCityInput}
+              className={Classes.searchFromTrainRecord}
             >
               <div className="h-[100%] flex items-center">
-              <span className="text-[16px] text-[#fff] cursor-pointer flex items-center">
-                  {busCity}
+              <span className="text-[16px] text-[#000] cursor-pointer flex items-center">
+                  {trainCity}
                 </span>
               </div>
             </div>
           </div>
-          {busDetailFromOpen && <BusDetailFrom onClose={handleBusDetailCityInput} />}
+          {trainFromOpen && <TrainFromDetail onClose={handleTrainCityInput} />}
 
-          <div className="h-[100%] w-[3%] flex max-[600px]:hidden flex-col justify-center items-center">
+          <div className="h-[100%] w-[3%] flex flex-col justify-center items-center max-[600px]:hidden">
             <img
               className="h-[90%]"
               src="https://railways.easemytrip.com/Content/Train/img/list-arrow-lr.png"
             />
           </div>
-          <div className={Classes.mainDivBusRecordSearch}>
+          <div className={Classes.mainDivTrainRecordSearch}>
             <div
-              onClick={handleBusDetailCityToInput}
-              className={Classes.searchToBusRecord}
+              onClick={handleTrainCityToInput}
+              className={Classes.searchToTrainRecord}
             >
               <div className="h-[100%] flex items-center">
-              <span className="text-[16px] text-[#fff] cursor-pointer flex items-center">
-                  {busToCity}
+              <span className="text-[16px] text-[#000] cursor-pointer flex items-center">
+                  {trainToCity}
                 </span>
               </div>
             </div>
           </div>
-          {busDetailToOpen && <BusDetailTo onClose={handleBusDetailCityToInput}  />}
+          {trainToOpen && <TrainToDetail onClose={handleTrainCityToInput}  />}
 
-          <div className={Classes.departureDateBus}>
+          <div className="flex justify-center rounded-[5px] items-center h-[100%] w-[21%] max-[600px]:w-[100%]  bg-[#fff]">
             <div className="w-[95%] h-[90%] flex items-center">
               <DatePicker
-                selected={busdepartureDate}
-                onChange={(date) => setBusDepartureDate(date)}
+                selected={traindepartureDate}
+                onChange={(date) => setTrainDepartureDate(date)}
                 minDate={new Date()}
                 customInput={<CustomInput />}
               />
@@ -130,8 +134,8 @@ function BusDetail(){
           </div>
           <div className="w-[16%] max-[600px]:w-[100%] max-[600px]:mb-[10px] h-[100%] flex justify-center items-center">
             <div
-              className={Classes.searchButtonBusRecords}
-              onClick={BusSearch}
+              className={Classes.searchButtonTrainRecords}
+              onClick={trainSearch}
             >
               <h3>Modify Search</h3>
             </div>
@@ -139,13 +143,13 @@ function BusDetail(){
         </div>
       </div>
       <div className="w-[100%] h-[100%] bg-[#e8f2fa] flex justify-center">
-        <div className="w-[80%] h-[100%] flex flex-row gap-[20px]">
+        <div className="w-[80%] max-[600px]:w-[95%] h-[100%] flex flex-row gap-[20px]">
             <div className="w-[20%] max-[600px]:hidden flex flex-col">
-            <div className={Classes.busDataPage}>
+              <div className={Classes.trainDataPage}>
               <div className="text-[#000] text-[14px] font-[600] ">
               <p>Filter By</p>
               </div>
-              <div className="mt-[30px]">
+            <div className="mt-[30px]">
               <p className="text-[#000] text-[12px] font-[600] ">Journey Coach filter</p>
               
               <div className="flex justify-between">
@@ -212,11 +216,9 @@ function BusDetail(){
                 </div>
                 <p style={{ marginTop: "10px" }}></p>
               </div>
-            </div> 
-            
-            
+            </div>
             <div className="mt-[30px]">
-              <p className="text-[#000] text-[12px] font-[600] ">Departure From {busToCity}</p>
+              <p className="text-[#000] text-[12px] font-[600] ">Departure From {trainCity}</p>
               <div className="w-[100%]">
                 <div className="w-[100%] bg-[#fff] mt-[5px] rounded-[5px] flex flex-col gap-[10px]">
                 <div className="w-[100%] cursor-pointer flex flex-col mt-[10px]">
@@ -226,7 +228,7 @@ function BusDetail(){
                       value="24"
                       checked={selectedOption === "24"}
                       onChange={() => handleCheckboxRatingChange("24")}
-                      onClick={() =>  handleClickSet("departureTime","$gte", "24")}
+                      onClick={() =>  handleClickSet("departureTime", "$gte", "24")}
                     />{" "}
                     <span className="flex gap-[10px] items-center">Early Morning <span>12am - 6am</span></span>
                   </label>
@@ -264,15 +266,15 @@ function BusDetail(){
                       onChange={() => handleCheckboxRatingChange("17")}
                       onClick={() =>  handleClickSet("departureTime", "$gte", "17")}
                     />{" "}
-                    <span className="flex gap-[10px] items-center">Night <span>5pm - 12am</span></span>
+                    <span className="flex gap-[10px] items-center">Night <span>6pm - 12am</span></span>
                     
                   </label>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="mt-[30px]">
-              <p className="text-[#000] text-[12px] font-[600] ">Arrival To {busToCity}</p>
+              <div className="mt-[30px]">
+              <p className="text-[#000] text-[12px] font-[600] ">Arrival To {trainToCity}</p>
               <div className="w-[100%]">
                 <div className="w-[100%] bg-[#fff] mt-[5px] rounded-[5px] flex flex-col gap-[10px]">
                 <div className="w-[100%] cursor-pointer flex flex-col mt-[10px]">
@@ -327,11 +329,11 @@ function BusDetail(){
                 </div>
               </div>
             </div>  
-
+            
           </div>
             </div>
             <div className="w-[79%] max-[600px]:w-[100%] h-[100%]">
-                <BusList searchResultsBus={searchResultsBus}/>
+                <TrainData searchResultsTrain={searchResultsTrain}/>
             </div>
         </div>
 
@@ -339,4 +341,4 @@ function BusDetail(){
         </div>
     )
 }
-export default BusDetail;
+export default TrainDetail;

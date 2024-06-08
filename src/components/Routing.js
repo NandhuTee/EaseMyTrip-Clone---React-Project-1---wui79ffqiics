@@ -29,26 +29,26 @@ function Routing(){
             <Route path="/navbar" element={<Navbar/>}/>
             <Route path="/" element={<Flights/>}/>
             <Route path="/hotels" element={<Hotels/>} />
-            <Route path="/hotelhome" element={<HotelHome/>} />
-            <Route path="/hoteldetails" element={<HotelDetail/>}/>
-            <Route path="/flightrecord" element={<FlightsRecords/>}/>
+            <Route path="/HotelHome" element={<HotelHome/>} />
+            <Route path="/HotelDetails" element={<HotelDetail/>}/>
+            <Route path="/FlightRecord" element={<FlightsRecords/>}/>
             <Route path="/train" element={<Train/>} />
-            <Route path="/trainrecord" element={<TrainDetail/>} />
+            <Route path="/TrainDetail" element={<TrainDetail/>} />
             <Route path="/bus" element={<Bus/>}/>
-            <Route path="/busrecord" element={<BusDetail/>}/>
-            <Route path="/mybooking" element={<MyBooking/>}/>
+            <Route path="/BusDetail" element={<BusDetail/>}/>
+            <Route path="/MyBooking" element={<MyBooking/>}/>
             
             
             <Route element={<PrivateRoute/>}>
             
             <Route path="/busBooking" element={<BusBooking/>}/>
             <Route path="/trainBooking" element={<TrainBooking/>}/>
-            <Route path="/flightpayment" element={<FlightPayMent/>}/>
-            <Route path="/hotelpayment" element={<HotelPayment/>}/>
-            <Route path="/trainpayment" element={<TrainPayment/>}/>
-            <Route path="/buspayment" element={<BusPayment/>}/>
-            <Route path="/flightbooking" element={<FlightBooking/>} />
-            <Route path="/hotelbooking" element={<HotelBooking/>}/>
+            <Route path="/FlightPayment" element={<FlightPayMent/>}/>
+            <Route path="/HotelPayment" element={<HotelPayment/>}/>
+            <Route path="/TrainPayment" element={<TrainPayment/>}/>
+            <Route path="/BusPayment" element={<BusPayment/>}/>
+            <Route path="/FlightBooking" element={<FlightBooking/>} />
+            <Route path="/HotelBooking" element={<HotelBooking/>}/>
             </Route>
         </Routes>
         </BrowserRouter>

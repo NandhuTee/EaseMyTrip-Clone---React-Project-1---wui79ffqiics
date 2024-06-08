@@ -15,7 +15,7 @@ function BusBooking(){
         selectedSeats,
         busBookingId,setFare,
         setBookingId,
-       setTravelare,
+        setTravelare,
         setBookingType,} = useAuth();
         const navigate = useNavigate();
     const departureDay= moment(busdepartureDate).format("ddd");

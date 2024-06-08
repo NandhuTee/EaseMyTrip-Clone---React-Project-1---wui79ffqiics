@@ -28,7 +28,7 @@ function FlightBooking() {
   const [lastNameError, setLastNameError] = useState("");
   const fetchSingleFlightData = async () => {
     try {
-      const projectID = "wui79ffqiicss";
+      const projectID = "wui79ffqiics";
       const response = await fetch(
         `https://academics.newtonschool.co/api/v1/bookingportals/flight/${flightBookingId}`,
         {

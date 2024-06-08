@@ -1,0 +1,9 @@
+.starRating {
+    display: flex;
+  }
+  
+  .star {
+    color: #ffd700; /* Set your preferred star color */
+    font-size: 1.2rem; /* Set your preferred star size */
+    margin-right: 2px; /* Set the margin between stars */
+  }
