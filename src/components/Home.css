@@ -1,0 +1,46 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle.red {
+    border-color: red;
+}
+
+.circle.blue {
+    border-color: blue;
+}
+
+.inner-circle {
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+}
+
+.inner-circle.red {
+    border: 2px solid red;
+}
+
+.inner-circle.blue {
+    border: 2px solid blue;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}

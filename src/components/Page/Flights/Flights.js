@@ -9,7 +9,9 @@ import { useAuth } from "../../components/Context";
 import FlightsTo from "./Flight DropDown/FlightsTo";
 import FlightFrom from "./Flight DropDown/FlightsFrom";
 import { useNavigate } from "react-router-dom";
+
 function Flights() {
+  // State variables using useState hook
   const [open, setOpen] = useState(false);
   const [openToModal, setOpenToModal] = useState(false);
   const [flightFromOpen, setFlightFromOpen] = useState(false);
@@ -20,8 +22,26 @@ function Flights() {
   const [offers, setOffers] = useState([]);
   const [selectedOfferType, setSelectedOfferType] = useState("ALL");
   const [loading, setLoading] = useState(true);
-  const { AirportFrom, AirportTo, travellersCount,flightdepartureDate,setFlightDepartureDate,seatCount, setSeatCount,seatAdultsCount, setSeatAdultsCount,seatChildrenCount, setSeatChildrenCount,seatInfantCount, setSeatInfantCount } = useAuth();
+
+  // Destructuring values from useAuth context
+  const {
+    AirportFrom,
+    AirportTo,
+    flightdepartureDate,
+    setFlightDepartureDate,
+    seatCount,
+    setSeatCount,
+    seatAdultsCount,
+    setSeatAdultsCount,
+    seatChildrenCount,
+    setSeatChildrenCount,
+    seatInfantCount,
+    setSeatInfantCount,
+  } = useAuth();
+
   const navigate = useNavigate();
+
+  // CustomInput component for DatePicker
   const CustomInput = ({ value, onClick }) => (
     <input
       type="text"
@@ -31,9 +51,13 @@ function Flights() {
       readOnly
     />
   );
+
+  // Function to handle search button click
   const handleSearch = () => {
     navigate("/flightrecord");
   };
+
+  // Fetch offers based on selected offer type
   useEffect(() => {
     const fetchOffers = async () => {
       try {
@@ -60,19 +84,28 @@ function Flights() {
     fetchOffers();
   }, [selectedOfferType]);
 
+  // Function to toggle flightTo dropdown visibility
   const handleFlightToOpen = () => {
     setFlightToOpen(!flightToOpen);
   };
+
+  // Function to toggle flightFrom dropdown visibility
   const handleFlightFormOpen = () => {
     setFlightFromOpen(!flightFromOpen);
   };
+
+  // Function to toggle flightTraveller dropdown visibility
   const handleFlightTraveller = () => {
     setFlightTraveller(!flightTraveller);
   };
+
+  // Function to handle change in selected offer type
   const handleOfferTypeChange = (type) => {
     setSelectedOfferType(type);
     setLoading(true);
   };
+
+  // Functions to increment and decrement seat counts for adults, children, and infants
   const incrementAdultsSeatCount = () => {
     setSeatCount((prevCount) => prevCount + 1);
     setSeatAdultsCount((prevCount) => prevCount + 1);
@@ -82,6 +115,7 @@ function Flights() {
     setSeatCount((prevCount) => (prevCount > 1 ? prevCount - 1 : 1));
     setSeatAdultsCount((prevCount) => (prevCount > 1 ? prevCount - 1 : 1));
   };
+
   const incrementChildrenSeatCount = () => {
     setSeatCount((prevCount) => prevCount + 1);
     setSeatChildrenCount((prevCount) => prevCount + 1);
@@ -101,9 +135,12 @@ function Flights() {
     setSeatCount((prevCount) => (prevCount > 1 ? prevCount - 1 : 1));
     setSeatInfantCount((prevCount) => (prevCount > 1 ? prevCount - 1 : 0));
   };
+
   return (
     <div className={Classes.flightsSection}>
+      {/* Navbar component */}
       <Navbar />
+
       <div className={Classes.flightBooking}>
         <div className={Classes.headSearchbar}>
           <div className={Classes.captionFlight}>
@@ -112,54 +149,61 @@ function Flights() {
             </h1>
           </div>
         </div>
+
         <div className={Classes.searchBarFlight}>
-          <div className={Classes.mainDivFlightSearch}>
-            <div
-              onClick={handleFlightFormOpen}
-              className={Classes.searchFromFlight}
-            >
-              <div className={Classes.inputHeading}>
-                <p className={Classes.pInputFlight}>From</p>
-              </div>
-              <div className={Classes.inputToSection}>
-                <span className="text-xl font-semibold cursor-pointer">
-                  {AirportFrom[0]}
-                </span>
-                <div className="text-sm cursor-pointer flex gap-[5px]">
-                  <span>[{AirportFrom[2]}]</span>
-                  <span>{AirportFrom[1]}</span>
-                </div>
+          {/* Flight From section */}
+          <div
+            onClick={handleFlightFormOpen}
+            className={Classes.searchFromFlight}
+          >
+            <div className={Classes.inputHeading}>
+              <p className={Classes.pInputFlight}>From</p>
+            </div>
+            <div className={Classes.inputToSection}>
+              <span className="text-xl font-semibold cursor-pointer">
+                {AirportFrom[0]}
+              </span>
+              <div className="text-sm cursor-pointer flex gap-[5px]">
+                <span>[{AirportFrom[2]}]</span>
+                <span>{AirportFrom[1]}</span>
               </div>
             </div>
           </div>
           {flightFromOpen && <FlightFrom onclose={handleFlightFormOpen} />}
+
+          {/* Divider */}
           <Divider orientation="vertical" className={Classes.divider} />
+
+          {/* Swap Icon */}
           <img
             className={Classes.swapIcon}
             src="https://www.easemytrip.com/Content/img/swipe_icon.svg"
           />
-          <div className={Classes.mainDivFlightSearch}>
-            <div
-              onClick={handleFlightToOpen}
-              className={Classes.searchToFlight}
-            >
-              <div className={Classes.inputHeading}>
-                <p className={Classes.pInputFlight}>To</p>
-              </div>
-              <div className={Classes.inputToSection}>
-                <span className="text-xl font-semibold cursor-pointer">
-                  {AirportTo[0]}
-                </span>
-                <div className="text-sm cursor-pointer flex gap-[5px]">
-                  <span>[{AirportTo[2]}]</span>
-                  <span>{AirportTo[1]}</span>
-                </div>
+
+          {/* Flight To section */}
+          <div
+            onClick={handleFlightToOpen}
+            className={Classes.searchToFlight}
+          >
+            <div className={Classes.inputHeading}>
+              <p className={Classes.pInputFlight}>To</p>
+            </div>
+            <div className={Classes.inputToSection}>
+              <span className="text-xl font-semibold cursor-pointer">
+                {AirportTo[0]}
+              </span>
+              <div className="text-sm cursor-pointer flex gap-[5px]">
+                <span>[{AirportTo[2]}]</span>
+                <span>{AirportTo[1]}</span>
               </div>
             </div>
           </div>
           {flightToOpen && <FlightsTo onclose={handleFlightToOpen} />}
 
-          <Divider orientation="vertical" className={Classes.divider}/>
+          {/* Divider */}
+          <Divider orientation="vertical" className={Classes.divider} />
+
+          {/* Departure Date section */}
           <div className={Classes.searchDepartureFlight}>
             <div className={Classes.flighthomeDeparture}>
               <div className={Classes.departureHeading}>
@@ -174,73 +218,152 @@ function Flights() {
               />
             </div>
           </div>
-          
-          <Divider orientation="vertical" className={Classes.divider}/>
+
+          {/* Divider */}
+          <Divider orientation="vertical" className={Classes.divider} />
+
+          {/* Traveller & Class section */}
           <div className={Classes.searchTravellerFlight}>
-            <div onClick={handleFlightTraveller} className={Classes.hotelChooseTraveller}>
+            <div
+              onClick={handleFlightTraveller}
+              className={Classes.hotelChooseTraveller}
+            >
               <div>
                 <p className={Classes.pInput}>TRAVELLER & CLASS</p>
               </div>
               <div className="flex justify-evenly items-center">
-              <span className="text-[26px] font-[600] text-[#000]">{seatCount}</span>
-              <span className="text-[13px] text-[#000] font-[600]"> Traveller(s)</span>
-              <i className={Classes.dropDownArrow}></i>
+                <span className="text-[26px] font-[600] text-[#000]">
+                  {seatCount}
+                </span>
+                <span className="text-[13px] text-[#000] font-[600]">
+                  {" "}
+                  Traveller(s)
+                </span>
+                <i className={Classes.dropDownArrow}></i>
               </div>
             </div>
           </div>
-          {flightTraveller && 
-          <div className="w-[15%] max-[600px]:w-[70%] h-55 absolute bg-slate-50 lg:mt-10 mt-[21em] p-2 rounded lg:ml-[55em] ml-[1em] z-10 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-            <div className=" w-[98%] flex flex-col gap-[5px]">
+
+          {/* Traveller dropdown */}
+          {flightTraveller && (
+            <div className="w-[15%] max-[600px]:w-[70%] h-55 absolute bg-slate-50 lg:mt-10 mt-[21em] p-2 rounded lg:ml-[55em] ml-[1em] z-10 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+              <div className=" w-[98%] flex flex-col gap-[5px]">
                 <div className="w-[100%] flex mb-[15px] mt-[5px] justify-between items-center">
-                    <div className="flex flex-col justify-center">
-                        <p className="text-[13px] text-[#000] font-[600]"> Adults</p>
-                        <p className="text-[11px]">(12+ Years)</p>
-                    </div>
-                    <div className=" rounded-[4px] border border-[#dcdcdc] border-solid flex items-center">
-                        <button className="w-[26px] h-[31px] border-[0] text-[18px] cursor-pointer text-[#000]" onClick={decrementAdultsSeatCount} disabled={seatAdultsCount <= 1}>-</button>
-                        <input className={Classes.travellerInput}type="text" value={seatAdultsCount} readOnly/>
-                        <button className="w-[26px] h-[31px] border-[0] text-[18px] cursor-pointer text-[#000]" onClick={incrementAdultsSeatCount} disabled={seatAdultsCount >= 9}>+</button>
-                    </div>
+                <div className="flex flex-col justify-center">
+                    <p className="text-[13px] text-[#000] font-[600]">
+                      Adults
+                    </p>
+                    <p className="text-[11px]">(12+ Years)</p>
+                  </div>
+                  <div className=" rounded-[4px] border border-[#dcdcdc] border-solid flex items-center">
+                    <button
+                      className="w-[26px] h-[31px] border-[0] text-[18px] cursor-pointer text-[#000]"
+                      onClick={decrementAdultsSeatCount}
+                      disabled={seatAdultsCount <= 1}
+                    >
+                      -
+                    </button>
+                    <input
+                      className={Classes.travellerInput}
+                      type="text"
+                      value={seatAdultsCount}
+                      readOnly
+                    />
+                    <button
+                      className="w-[26px] h-[31px] border-[0] text-[18px] cursor-pointer text-[#000]"
+                      onClick={incrementAdultsSeatCount}
+                      disabled={seatAdultsCount >= 9}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
+
+                {/* Children Seat Count section */}
                 <div className="w-[100%] flex mb-[15px] justify-between items-center">
-                    <div className="flex flex-col justify-center">
-                        <p className="text-[13px] text-[#000] font-[600]"> Children</p>
-                        <p className="text-[11px]">(2-12 Years)</p>
-                    </div>
-                    <div className=" rounded-[4px] border border-[#dcdcdc] border-solid flex items-center">
-                        <button className="w-[26px] h-[31px] border-[0] text-[18px] cursor-pointer text-[#000]" onClick={decrementChildrenSeatCount} disabled={seatChildrenCount <= 0}>-</button>
-                        <input className={Classes.travellerInput}type="text" value={seatChildrenCount} readOnly/>
-                        <button className="w-[26px] h-[31px] border-[0] text-[18px] cursor-pointer text-[#000]" onClick={incrementChildrenSeatCount} disabled={seatChildrenCount >= 9}>+</button>
-                    </div>
+                  <div className="flex flex-col justify-center">
+                    <p className="text-[13px] text-[#000] font-[600]">
+                      Children
+                    </p>
+                    <p className="text-[11px]">(2-12 Years)</p>
+                  </div>
+                  <div className=" rounded-[4px] border border-[#dcdcdc] border-solid flex items-center">
+                    <button
+                      className="w-[26px] h-[31px] border-[0] text-[18px] cursor-pointer text-[#000]"
+                      onClick={decrementChildrenSeatCount}
+                      disabled={seatChildrenCount <= 0}
+                    >
+                      -
+                    </button>
+                    <input
+                      className={Classes.travellerInput}
+                      type="text"
+                      value={seatChildrenCount}
+                      readOnly
+                    />
+                    <button
+                      className="w-[26px] h-[31px] border-[0] text-[18px] cursor-pointer text-[#000]"
+                      onClick={incrementChildrenSeatCount}
+                      disabled={seatChildrenCount >= 9}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
+
+                {/* Infant Seat Count section */}
                 <div className="w-[100%] flex mb-[15px] justify-between items-center">
-                    <div className="flex flex-col justify-center">
-                        <p className="text-[13px] text-[#000] font-[600]"> Infant</p>
-                        <p className="text-[11px]">(0-2 Years)</p>
-                    </div>
-                    <div className=" rounded-[4px] border border-[#dcdcdc] border-solid flex items-center">
-                        <button className="w-[26px] h-[31px] border-[0] text-[18px] cursor-pointer text-[#000]" onClick={decrementInfantSeatCount} disabled={seatInfantCount <= 0}>-</button>
-                        <input className={Classes.travellerInput}type="text" value={seatInfantCount} readOnly/>
-                        <button className="w-[26px] h-[31px] border-[0] text-[18px] cursor-pointer text-[#000]" onClick={incrementInfantSeatCount} disabled={seatInfantCount >= 9}>+</button>
-                    </div>
+                  <div className="flex flex-col justify-center">
+                    <p className="text-[13px] text-[#000] font-[600]">
+                      Infant
+                    </p>
+                    <p className="text-[11px]">(0-2 Years)</p>
+                  </div>
+                  <div className=" rounded-[4px] border border-[#dcdcdc] border-solid flex items-center">
+                    <button
+                      className="w-[26px] h-[31px] border-[0] text-[18px] cursor-pointer text-[#000]"
+                      onClick={decrementInfantSeatCount}
+                      disabled={seatInfantCount <= 0}
+                    >
+                      -
+                    </button>
+                    <input
+                      className={Classes.travellerInput}
+                      type="text"
+                      value={seatInfantCount}
+                      readOnly
+                    />
+                    <button
+                      className="w-[26px] h-[31px] border-[0] text-[18px] cursor-pointer text-[#000]"
+                      onClick={incrementInfantSeatCount}
+                      disabled={seatInfantCount >= 9}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
+
+                {/* Done button */}
                 <div className="w-[100%] border border-solid border-[#2196f3] text-[14px] font-[600] bg-[#fff] text-[#2196f3] flex rounded-[5px] mt-[7px] cursor-pointer justify-center items-center hover:text-[#fff] hover:bg-[#2196f3] pt-[8px] pb-[8px]" onClick={handleFlightTraveller}> Done</div>
-               
-
-            </div> 
+              </div>
             </div>
-          }
+          )}
 
+          {/* Search button */}
           <div className={Classes.searchButtonFlight} onClick={handleSearch}>
             <h3 className={Classes.h3Search}>SEARCH</h3>
           </div>
         </div>
       </div>
+
+      {/* Offer Heading */}
       <div className={Classes.offerHeadingFlight}>
         <div className={Classes.headingDivFlight}>
           <h3 className={Classes.headingOffers}>Exclusive Offers</h3>
         </div>
       </div>
+
+      {/* List of offer types */}
       <div className={Classes.listOffers}>
         <p
           className={Classes.listOffersFlight}
@@ -266,8 +389,9 @@ function Flights() {
         >
           Rails
         </p>
-      
       </div>
+
+      {/* Flight offers section */}
       <div className={Classes.flightOffersSection}>
         {loading ? (
           <p>Loading offers...</p>
@@ -293,8 +417,10 @@ function Flights() {
           ))
         )}
       </div>
-    
     </div>
   );
 }
+
 export default Flights;
+
+

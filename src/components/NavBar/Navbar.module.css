@@ -1,392 +1,275 @@
-.navbarEase{
-    height: 70px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-.navContent{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    gap: 20px;
-    
-}
-.navClickSection{
-    height: 100%;
-    width: 80vw;
-    margin-left: 10px;
-    display: flex;
-}
-.navLogoSection{
-    width: 10vw;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.logoEase{
-    width: 115px;
-    margin-top: 2px;
-}
-.navRouteContent{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 65%;
-
-}
-.clickSection{
-    display: flex;
-    align-items: center;
-    height: 100%;
-    gap: 5px;
-    width: 100%;
-   
-}
-/* Text Styles */
-.clickFLIGHTSH3{
-    font-weight: 500;
-    font-size: 13px;
-    cursor: pointer;
-    color: #000000;
-    padding: 19px 9px;
-    text-transform: uppercase;
-}
-.clickFLIGHTSH3:hover{
-    color: #ef6614;
-    border-bottom: 5px solid #ef6614;
-}
-.clickHOTELSH3{
-    font-weight: 500;
-    font-size: 13px;
-    cursor: pointer;
-    color: #000000;
-    padding: 19px 9px;
-    text-transform: uppercase;
-    
-}
-.clickHOTELSH3:hover{
-    color: #ef6614;
-    border-bottom: 5px solid #ef6614;
-}
-.clickTRAINSH3{
-    font-weight: 500;
-    font-size: 13px;
-    cursor: pointer;
-    color: #000000;
-    padding: 19px 9px;
-    text-transform: uppercase; 
-}
-.clickTRAINSH3:hover{
-    color: #ef6614;
-    border-bottom: 5px solid #ef6614;
-}
-.clickBUSH3{
-    font-weight: 500;
-    font-size: 13px;
-    cursor: pointer;
-    color: #000000;
-    padding: 19px 9px ;
-    text-transform: uppercase;
-    
-}
-.clickBUSH3:hover{
-    color: #ef6614;
-    border-bottom: 5px solid #ef6614;
+/* Navbar Container */
+.navbarEase {
+    height: 70px; /* Height of the navbar */
+    width: 100%; /* Full width of the viewport */
+    display: flex; /* Flex container */
+    flex-direction: row; /* Arrange items horizontally */
 }
 
-.joinIcon{
-    width: 50px;
-}
-.navJoinSection{
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    width: 15vw;
-}
-.navUser{
-    width: 20vw;
-    height: 100%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
+/* Main Content Section */
+.navContent {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    display: flex; /* Flex container */
+    gap: 20px; /* Spacing between children */
 }
 
-/* my Account */
-.myAcount{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    width: 155px;
-    height: 34px;
-    margin-top: 0.1em;
-    gap: 10px;
-    overflow-y: hidden; 
-    overflow-x: hidden;
+/* Clickable Section */
+.navClickSection {
+    height: 100%; /* Full height */
+    width: 80vw; /* 80% of viewport width */
+    margin-left: 10px; /* Left margin */
+    display: flex; /* Flex container */
 }
 
-.userIconNav{
+/* Logo Section */
+.navLogoSection {
+    width: 10vw; /* 10% of viewport width */
+    height: 100%; /* Full height */
+    display: flex; /* Flex container */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+/* Logo Image */
+.logoEase {
+    width: 115px; /* Width of the logo */
+    margin-top: 2px; /* Top margin */
+}
+
+/* Route Links Content */
+.navRouteContent {
+    display: flex; /* Flex container */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 65%; /* 65% of the available width */
+}
+
+/* Section with Clickable Links */
+.clickSection {
+    display: flex; /* Flex container */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Full height */
+    gap: 5px; /* Spacing between children */
+    width: 100%; /* Full width */
+}
+
+/* Styles for Individual Link Headers */
+.clickFLIGHTSH3,
+.clickHOTELSH3,
+.clickTRAINSH3,
+.clickBUSH3 {
+    font-weight: 500; /* Font weight */
+    font-size: 13px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    color: #000000; /* Text color */
+    padding: 19px 9px; /* Padding */
+    text-transform: uppercase; /* Uppercase text */
+}
+
+/* Hover Styles for Links */
+.clickFLIGHTSH3:hover,
+.clickHOTELSH3:hover,
+.clickTRAINSH3:hover,
+.clickBUSH3:hover {
+    color: #ef6614; /* Text color on hover */
+    border-bottom: 5px solid #ef6614; /* Bottom border on hover */
+}
+
+/* Join Icon */
+.joinIcon {
+    width: 50px; /* Width of the icon */
+}
+
+/* Join Section */
+.navJoinSection {
+    display: flex; /* Flex container */
+    align-items: center; /* Center vertically */
+    justify-content: end; /* Align to the end */
+    width: 15vw; /* 15% of viewport width */
+}
+
+/* User Account Section */
+.navUser {
+    width: 20vw; /* 20% of viewport width */
+    height: 100%; /* Full height */
+    display: flex; /* Flex container */
+    justify-content: end; /* Align to the end */
+    align-items: center; /* Center vertically */
+}
+
+/* My Account Section */
+.myAcount {
+    display: flex; /* Flex container */
+    align-items: center; /* Center vertically */
+    cursor: pointer; /* Pointer cursor */
+    width: 155px; /* Width */
+    height: 34px; /* Height */
+    margin-top: 0.1em; /* Top margin */
+    gap: 10px; /* Spacing between items */
+    overflow-y: hidden; /* Hide overflow vertically */
+    overflow-x: hidden; /* Hide overflow horizontally */
+}
+
+/* User Icon */
+.userIconNav {
     width: 30px; /* Width of the circular container */
     height: 30px; /* Height of the circular container */
-    background-color: white; /* White background color for the circle */
-    border-radius: 50%; /* Make the container circular */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    /* margin-top: 4em;
-    margin-left: 15em; */
+    background-color: white; /* White background color */
+    border-radius: 50%; /* Circular shape */
+    display: flex; /* Flex container */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    overflow: hidden; /* Hide overflow */
 }
-.iconMan{
-    margin-top: 35px;
-    margin-right: 17px;
-    width: 350;
-}
-.accountBox{
-    position: relative;
-    box-shadow: 1px 2px 5px black;
-    background-color: white;
-    border-radius: 5px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 1;
-    cursor: default;
-   
 
+/* Man Icon */
+.iconMan {
+    margin-top: 35px; /* Top margin */
+    margin-right: 17px; /* Right margin */
+    width: 350; /* Width (should have a unit like px or %) */
 }
+
+/* Dropdown Content Box */
+.accountBox {
+    position: relative; /* Relative positioning */
+    box-shadow: 1px 2px 5px black; /* Shadow */
+    background-color: white; /* Background color */
+    border-radius: 5px; /* Rounded corners */
+    height: 100%; /* Full height */
+    width: 100%; /* Full width */
+    display: flex; /* Flex container */
+    flex-direction: column; /* Column layout */
+    gap: 10px; /* Spacing between children */
+    z-index: 1; /* Stack order */
+    cursor: default; /* Default cursor */
+}
+
+/* Dropdown Content */
 .dropdownContent {
-    width: 200px;
-    height: 100%;
-    right: 3px;
-    margin-top: 2em;
-    z-index: 2;
-    
+    position: absolute; /* Absolute positioning */
+    display: none; /* Initially hidden */
+    width: 200px; /* Width */
+    height: 100%; /* Full height */
+    right: 3px; /* Right offset */
+    margin-top: 2em; /* Top margin */
+    z-index: 2; /* Stack order */
 }
-.dropdownContent {
-    position: absolute;
-    display: none;
-}
+
+/* Dropdown Content Display on Hover */
 .myAcount:hover .dropdownContent {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    height: auto;
+    display: flex; /* Show on hover */
+    flex-direction: column; /* Column layout */
+    gap: 8px; /* Spacing between items */
+    height: auto; /* Auto height */
 }
 
-.bookingP{
-    font-size: 13px;
-    color: #000;
+/* Booking Paragraph */
+.bookingP {
+    font-size: 13px; /* Font size */
+    color: #000; /* Text color */
 }
 
-/* 24x7 Helpline */
-
-
+/* Help Dropdown Content */
 .dropdownhelpContent {
-    position: absolute;
-    display: none;
+    position: absolute; /* Absolute positioning */
+    display: none; /* Initially hidden */
 }
+
+/* Help Dropdown Content Display on Hover */
 .myhelp:hover .dropdownhelpContent {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    height: auto; 
-}
-.myhelp{
-    cursor: pointer;
-}
-.navAcount{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    height: 4vh;
-}
-.dividerLogin{
-    margin-top: 5px;
-}
-.avatar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 5px;
-   
-}
-.loginBtnSection{
-  display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 5vh;
-    margin-top: 5px;
-    
-    
-}
-.btnLogin{
-    height: 5vh;
-    width: 12vw;
-    border-radius: 5px;
-    background-color: #fff;
-   font-size: 13px;
-   font-weight: 600;
-   cursor: pointer;
-    color: #ef6614;
-    border: 1px solid #ef6614;
-}
-.linkSection{
-    color: black;
-  text-decoration: none;
-  
+    display: flex; /* Show on hover */
+    flex-direction: column; /* Column layout */
+    gap: 8px; /* Spacing between items */
+    height: auto; /* Auto height */
 }
 
-/* Modal Login */
-.modalLoginSection{
-    position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   width: 38%;
-   border: none;
-   border-radius: 5px;
-   box-shadow: 1px 2px 5px black;
-   background-color: white;
-   padding: 4;
-   display: flex;
-   justify-content: center;
+/* Navigation Account Section */
+.navAcount {
+    display: flex; /* Flex container */
+    flex-direction: column; /* Column layout */
+    gap: 8px; /* Spacing between items */
+    height: 4vh; /* Height */
 }
-.closeBtn{
-    width: 11px;
-    height: 11px;
-    background: url(https://www.easemytrip.com/images/new-login/home-sub-sprite.png) no-repeat -96px -24px;
-    opacity: .3;
-    background-size: 200px 39px;
-    position: absolute;
-    top: 22px;
-    right: 30px;
-    cursor: pointer;
-}
-/* Modal SignUp */
-.modalSignUpSection{
-    position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   width: 38%;
-   border: none;
-   border-radius: 5px;
-   box-shadow: 1px 2px 5px black;
-   background-color: white;
-   padding: 4;
-   display: flex;
-   justify-content: center;
-}
-.closeBtnSignUp{
-    width: 11px;
-    height: 11px;
-    background: url(https://www.easemytrip.com/images/new-login/home-sub-sprite.png) no-repeat -96px -24px;
-    opacity: .3;
-    background-size: 200px 39px;
-    position: absolute;
-    top: 22px;
-    right: 25px;
-    cursor: pointer;
-}
-.myBookingSection{
-    background-image: linear-gradient(261deg,#56CCF2, #2F80ED );
-    height: 215px;
-    padding: 30px;
-    display: flex;
-    justify-content: center;
-}
-.myBookingDiv{
-    background-color: white;
-    width: 90%;
-    height: 555px;
-    border-radius: 10px;
-    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.1);
-    margin-top: 40px;
-    overflow: hidden;
-    overflow-y: scroll;
-}
-.myBookingDiv::-webkit-scrollbar {
-    display: none;
-  }
-.boxMyBooking{
-    display: flex;
-    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
-    height: 100px;
-    gap: 10px;
-    padding: 30px;
-}
-.summeryBox{
-    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
-    height: 150px;
-    margin: 20px;
-    padding: 20px;
-    display: flex;
-   
-    justify-content: space-between;
-    background-color: white;
-}
-@media(max-width:600px){
-    
-    .navClickSection{
-        display: flex;
-        flex-direction: column;
-        width: 70vw;
-    }
-    .navbarEase{
-        width: 100%;
-        height: 100%!important;
 
-    }
-    .navContent{
-        width: 100%;
-        height: 140px;
-        display: flex;
-        gap: 0;
-        flex-direction: column;
-    }
-    .navLogoSection{
-        width: 45%;
-    }
-    .navRouteContent{
-        display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    
-    }
-    .navUser{
-        height: 140px;
-        width: 30vw;
-        display: flex;
-        align-items: start;
-        justify-content: center;
-    }
-    .myAcount{
-        width: 100%;
-        height: 50%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-    .navJoinSection{
-        display: none;
-    }
-    .userIconNav{
-        margin-top: 25px;
-    }
-    .btnLogin{
-        width: 90%;
-    }
-    .modalLoginSection{
-        width: 95%;
-    }
-    .modalSignUpSection{
-        width: 95%;
-    }
-    .dropdownContent{
-        margin-top: 3.5em;
-    }
+/* Divider Below Login */
+.dividerLogin {
+    margin-top: 5px; /* Top margin */
 }
+
+/* Avatar Section */
+.avatar {
+    display: flex; /* Flex container */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    margin-top: 5px; /* Top margin */
+}
+
+/* Login Button Section */
+.loginBtnSection {
+    display: flex; /* Flex container */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    height: 5vh; /* Height */
+    margin-top: 5px; /* Top margin */
+}
+
+/* Login Button */
+.btnLogin {
+    height: 5vh; /* Height */
+    width: 12vw; /* Width */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #fff; /* Background color */
+    font-size: 13px; /* Font size */
+    font-weight: 600; /* Font weight */
+    cursor: pointer; /* Pointer cursor */
+    color: #ef6614; /* Text color */
+    border: 1px solid #ef6614; /* Border */
+}
+
+/* Styled Link Section */
+.linkSection {
+    color: black; /* Text color */
+    text-decoration: none; /* No underline */
+}
+
+/* Modal Login Section */
+.modalLoginSection {
+    position: absolute; /* Absolute positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center modal */
+    width: 38%; /* Width of the modal */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 1px 2px 5px black; /* Shadow */
+    background-color: white; /* Background color */
+    padding: 4; /* Padding */
+    display: flex; /* Flex container */
+    justify-content: center; /* Center content */
+}
+
+/* Close Button for Modal */
+.closeBtn {
+    width: 11px; /* Width */
+    height: 11px; /* Height */
+    background: url(https://www.easemytrip.com/images/new-login/home-sub-sprite.png) no-repeat -96px -24px; /* Background image */
+    opacity: .3; /* Opacity */
+    background-size: 200px 39px; /* Background size */
+    position: absolute; /* Absolute positioning */
+    top: 22px; /* Offset from top */
+    right: 30px; /* Offset from right */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Modal SignUp Section */
+.modalSignUpSection {
+    position: absolute; /* Absolute positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center modal */
+    width: 38%; /* Width of the modal */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 1px 2px 5px black; /* Shadow */
+    background
