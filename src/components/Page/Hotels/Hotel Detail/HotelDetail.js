@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../../components/NavBar/Navbar";
-import HotelSearchbar from "../HotelSearchbar";
+import Navbar from "../../../NavBar/Navbar";
+import HotelSearchbar from "../HotelSerchbar";
 import Classes from "../Hotels.module.css";
 import { Divider } from '@mui/material';
-import { useAuth } from "../../../components/Context";
+import { useAuth } from "../../../Context";
 import { useNavigate } from "react-router-dom";
-import ModalLogin from "../../../components/NavBar/ModalLogin";
+import ModalLogin from "../../../NavBar/ModalLogin";
 
 function HotelDetail() {
   const [hotelDetailData, setHotelDetailData] = useState([]);

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../../../components/NavBar/Navbar";
-import { useAuth } from "../../../components/Context";
+import Navbar from "../../../NavBar/Navbar"
+//import Navbar from "../../../components/NavBar/Navbar";
+import { useAuth } from "../../../Context";
 import Classes from "../Hotels.module.css";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";

@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import moment from "moment";
 import {Divider} from "@mui/material";
 import Classes from "./Hotels.module.css";
-import { useAuth } from "../../components/Context";
+import { useAuth } from "../../Context";
 import "react-datepicker/dist/react-datepicker.css";
 
 function HotelSearchbar(){

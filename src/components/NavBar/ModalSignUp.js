@@ -1,4 +1,3 @@
-// Importing necessary libraries and components
 import React, { useState } from "react";
 import Classes from "./Navbar.module.css"; // Importing CSS module for styling
 import { useAuth } from "../Context"; // Custom hook for authentication context
@@ -6,7 +5,6 @@ import Modal from "@mui/material/Modal"; // Material-UI Modal component
 
 function ModalSignUp() {
   // State management using React hooks
-  
   const { openSignUp, setOpenSignUp } = useAuth(); // Destructuring state and methods from authentication context(Manages the modal's open/close state)
   const [firstName, setFirstName] = useState(""); // State for first name input field
   const [lastName, setLastName] = useState(""); // State for last name input field
@@ -39,7 +37,7 @@ function ModalSignUp() {
   // Handler for last name input change
   function lastNameInput(e) {
     const lastNameSet = e.target.value;
-    setLasttName(lastNameSet);
+    setLastName(lastNameSet); // Corrected typo here
   }
 
   // Function to handle signup process
@@ -173,7 +171,10 @@ function ModalSignUp() {
             </div>
             {/* Continue button for signup */}
             <div className="w-[100%] flex items-center justify-center mt-[10px]">
-              <div className="text-[18px] text-[#fff] w-[100%] h-[43px] font-[600] rounded-[40px] bg-[#EF6614] cursor-pointer flex items-center justify-center" onClick={handleBusSignup}>
+              <div
+                className="text-[18px] text-[#fff] w-[100%] h-[43px] font-[600] rounded-[40px] bg-[#EF6614] cursor-pointer flex items-center justify-center"
+                onClick={handleBusSignup}
+              >
                 Continue
               </div>
             </div>
@@ -193,6 +194,3 @@ function ModalSignUp() {
 
 // Exporting ModalSignUp component as the default export from this module
 export default ModalSignUp;
-
-
-

@@ -1,5 +1,5 @@
 import React from 'react'
-import "./PaymentSuccess.css";
+import "./PaymentSuccessfull.css";
 import { useNavigate } from 'react-router'
 
 function PaymentSuccessfull() {

@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../../../components/NavBar/Navbar";
+import Navbar from "../../../NavBar/Navbar";
 import moment from "moment";
-import Classes from "./FlightRecord.module.css";
-import { useAuth } from "../../../components/Context";
+//import Classes from "./FlightRecord.module.css";
+import Classes from "../Flight.module.css"
+//import { useAuth } from "../../../components/Context";
+import { useAuth } from "../../../../components/Context";
+//import FlightFrom from "../Flight DropDown/FlightsFrom";
 import FlightFrom from "../Flight DropDown/FlightsFrom";
 import Divider from "@mui/material/Divider";
+//import FlightsTo from "../Flight DropDown/FlightsTo";
 import FlightsTo from "../Flight DropDown/FlightsTo";
 import DatePicker from "react-datepicker";
+//import FlightLists from "./FlightLists";
 import FlightLists from "./FlightLists";
 
 function FlightsRecords() {

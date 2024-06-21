@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import Classes from "./HotelHome.module.css";
-import Navbar from "../../components/NavBar/Navbar";
+import Navbar from "../../NavBar/Navbar";
 import Divider from "@mui/material/Divider";
 import DatePicker from "react-datepicker";
 import moment from "moment";
-import { useAuth } from "../../components/Context";
+import { useAuth } from "../../Context";
 import ListItemButton from "@mui/material/ListItemButton";
 import {useNavigate } from "react-router-dom";
 

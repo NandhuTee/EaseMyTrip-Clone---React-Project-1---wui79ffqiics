@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import moment from "moment";
 import Classes from "../Hotels.module.css";
-import Navbar from "../../../components/NavBar/Navbar";
+import Navbar from "../../../NavBar/Navbar";
 import "react-datepicker/dist/react-datepicker.css";
 import _debounce from "lodash/debounce";
 import { Divider} from "@mui/material";
-import { useAuth } from "../../../components/Context";
+import { useAuth } from "../../../Context";
 import ListItemButton from "@mui/material/ListItemButton";
 import HotelResult from "./HotelResult";
 

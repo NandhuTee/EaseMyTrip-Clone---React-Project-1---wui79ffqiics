@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-import Classes from "./Flights.module.css";
-import Navbar from "../../components/NavBar/Navbar";
+//import Classes from "./Flights.module.css";
+import Classes from "./Flight.module.css";
+import Navbar from "../../NavBar/Navbar";
 import Divider from "@mui/material/Divider";
 import DatePicker from "react-datepicker";
 
-import { useAuth } from "../../components/Context";
+import { useAuth } from "../../Context";
 import FlightsTo from "./Flight DropDown/FlightsTo";
 import FlightFrom from "./Flight DropDown/FlightsFrom";
 import { useNavigate } from "react-router-dom";

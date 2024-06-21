@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useAuth } from "../../../components/Context";
+import { useAuth } from "../../../../components/Context";
 import ListItemButton from "@mui/material/ListItemButton";
-import Classes from "../Flights.module.css";
+import Classes from "../Flight.module.css";
 const FlightFrom = ({ onclose }) => {
   const [airport, setAirport] = useState("");
   const [airportDetail, setAirportDetail] = useState([]);
   const [liData, setLiData] = useState(false);
-  const {setAriportFrom} = useAuth();
+  const {setAirportFrom} = useAuth();
 
   const handleLiData = (city,name,iata_code) => {
-    setAriportFrom([city,name,iata_code]);
+    setAportFrom([city,name,iata_code]);
     setLiData(true);
     onclose(liData);
   };
