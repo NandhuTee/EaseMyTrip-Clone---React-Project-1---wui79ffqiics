@@ -83,14 +83,7 @@ function Navbar() {
               <Link className={Classes.linkSection} to={"/hotelhome"}>
                 <h3 className={Classes.clickHOTELSH3}>HOTELS</h3>
               </Link>
-              <Divider orientation="vertical" style={{ "height": "40%" }} />
-              <Link className={Classes.linkSection} to={"/train"}>
-                <h3 className={Classes.clickTRAINSH3}>TRAINS</h3>
-              </Link>
-              <Divider orientation="vertical" style={{ "height": "40%" }} />
-              <Link className={Classes.linkSection} to={"/bus"}>
-                <h3 className={Classes.clickBUSH3}>BUS</h3>
-              </Link>
+              
             </div>
           </div>
 
