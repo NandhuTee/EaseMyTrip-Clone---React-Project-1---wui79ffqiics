@@ -114,7 +114,7 @@ function ModalLogin() {
               <div className="text-[13px] text-[#0866FF]   rounded-[40px] cursor-pointer flex items-center justify-center" onClick={handleOpenSignUp}>Create New Account ?</div>
             </div>
             <div className="w-[100%] flex justify-center items-center mt-[10px] mb-[15px]">
-              <p className="w-[100%] text-[11px] text-[#8A8686] flex items-center">By logging in, I understand & agree to EaseMyTrip terms of use  and privacy policy</p>
+              <p className="w-[100%] text-[11px] text-[#8A8686] flex items-center">By logging in,I understand & agree to EaseMyTrip terms of use  and privacy policy</p>
             </div>
           </div>
           
