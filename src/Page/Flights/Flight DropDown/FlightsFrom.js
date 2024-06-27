@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { useAuth } from "../../../../components/Context";
+import { useAuth } from "../../../components/Context";
 import ListItemButton from "@mui/material/ListItemButton";
-import Classes from "../Flight.module.css";
+import Classes from "../Flights.module.css";
+
+
 const FlightFrom = ({ onclose }) => {
   const [airport, setAirport] = useState("");
   const [airportDetail, setAirportDetail] = useState([]);
   const [liData, setLiData] = useState(false);
-  const {setAirportFrom} = useAuth();
+  const {setAriportFrom} = useAuth();
 
   const handleLiData = (city,name,iata_code) => {
-    setAportFrom([city,name,iata_code]);
+    setAriportFrom([city,name,iata_code]);
     setLiData(true);
     onclose(liData);
   };
@@ -27,7 +29,7 @@ const FlightFrom = ({ onclose }) => {
       fetch(api, {
         method: "GET",
         headers: {
-          projectID: "wui79ffqiics",
+          projectID: "uojmjpx76p25",
         },
       })
         .then((response) => {

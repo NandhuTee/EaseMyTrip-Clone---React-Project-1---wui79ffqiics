@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Navbar from "../../../NavBar/Navbar";
+import Navbar from "../../../components/NavBar/Navbar";
 import Classes from "../Hotels.module.css";
-import upiQr from "../../../../Design/PhonePayUpiQr.jpg";
-import { useAuth } from "../../../Context";
+import upiQr from "../../../Design/PhonePayUpiQr.jpg";
+import { useAuth } from "../../../components/Context";
 import Divider from "@mui/material/Divider";
 import PaymentSuccessfull from "../../Payment Successfull/PaymentSuccessfull";
 
@@ -43,7 +43,7 @@ function HotelPayment() {
         method: "POST",
         headers: {
           Authorization: `Bearer ${bartoken}`,
-          projectID: "wui79ffqiics",
+          projectID: "uojmjpx76p25",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({

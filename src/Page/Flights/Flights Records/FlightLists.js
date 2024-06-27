@@ -1,13 +1,9 @@
 import React,{useState} from "react";
-//import Classes from "./FlightRecord.module.css";
 import Classes from "./FlightRecord.module.css";
-//import { useAuth } from "../../../components/Context";
-import { useAuth } from "../../../../components/Context";
-//import FlightDetail from "../Flight Detail/FlightDetail";
+import { useAuth } from "../../../components/Context";
 import FlightDetail from "../Flight Detail/FlightDetail";
 import { useNavigate } from "react-router-dom";
-//import ModalLogin from "../../../components/NavBar/ModalLogin";
-import ModalLogin from "../../../NavBar/ModalLogin";
+import ModalLogin from "../../../components/NavBar/ModalLogin";
 function FlightLists({ searchResults }) {
   const [flightDetailOpen, setFlightDetailOpen] = useState(false);
   const {openLogin, setOpenLogin,setFlightId,AirportFrom,AirportTo,setFlightBookingId} = useAuth();

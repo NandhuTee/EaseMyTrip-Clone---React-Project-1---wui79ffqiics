@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import Classes from "./HotelHome.module.css";
-import Navbar from "../../NavBar/Navbar";
+import Navbar from "../../components/NavBar/Navbar";
 import Divider from "@mui/material/Divider";
 import DatePicker from "react-datepicker";
 import moment from "moment";
-import { useAuth } from "../../Context";
+import { useAuth } from "../../components/Context";
 import ListItemButton from "@mui/material/ListItemButton";
 import {useNavigate } from "react-router-dom";
 
@@ -112,8 +112,8 @@ function HotelHome() {
   useEffect(() => {
     const fetchOffers = async () => {
       try {
-       
-        const yourProjectID = "wui79ffqiics";
+        //const yourProjectID = "2zqsmiro66wm";
+        const yourProjectID = "uojmjpx76p25";
         const response = await fetch(
           `https://academics.newtonschool.co/api/v1/bookingportals/offers?filter={"type":"${selectedOfferType}"}`,
           {

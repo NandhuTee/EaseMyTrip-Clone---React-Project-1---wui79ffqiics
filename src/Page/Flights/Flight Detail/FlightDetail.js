@@ -1,6 +1,5 @@
 import React, { useEffect,useState } from "react";
-//import { useAuth } from "../../../components/Context";
-import { useAuth } from "../../../Context";
+import { useAuth } from "../../../components/Context";
 import moment from "moment";
 function FlightDetail(){
     const [hotelDetailError, setHotelDetailError] = useState(null);
@@ -11,7 +10,7 @@ function FlightDetail(){
 
     const fetchSingleFlightData = async () => {
         try {
-          const projectID = "wui79ffqiics";
+          const projectID = "uojmjpx76p25";
           const response = await fetch(
             `https://academics.newtonschool.co/api/v1/bookingportals/flight/${flightId}`,
             {

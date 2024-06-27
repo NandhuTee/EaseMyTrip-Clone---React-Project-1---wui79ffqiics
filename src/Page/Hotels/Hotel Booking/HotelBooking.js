@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../../../NavBar/Navbar"
-//import Navbar from "../../../components/NavBar/Navbar";
-import { useAuth } from "../../../Context";
+import Navbar from "../../../components/NavBar/Navbar";
+import { useAuth } from "../../../components/Context";
 import Classes from "../Hotels.module.css";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
@@ -54,7 +53,7 @@ function HotelBooking() {
 
   const fetchSingleFlightData = async () => {
     try {
-      const projectID = "wui79ffqiics";
+      const projectID = "uojmjpx76p25";
       const response = await fetch(
         `https://academics.newtonschool.co/api/v1/bookingportals/hotel/${hotelBookingId}`,
         {

@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../../../NavBar/Navbar";
+import Navbar from "../../../components/NavBar/Navbar";
 import moment from "moment";
-//import Classes from "./FlightRecord.module.css";
-import Classes from "../Flight.module.css"
-//import { useAuth } from "../../../components/Context";
-import { useAuth } from "../../../../components/Context";
-//import FlightFrom from "../Flight DropDown/FlightsFrom";
+import Classes from "./FlightRecord.module.css";
+import { useAuth } from "../../../components/Context";
 import FlightFrom from "../Flight DropDown/FlightsFrom";
 import Divider from "@mui/material/Divider";
-//import FlightsTo from "../Flight DropDown/FlightsTo";
 import FlightsTo from "../Flight DropDown/FlightsTo";
 import DatePicker from "react-datepicker";
-//import FlightLists from "./FlightLists";
 import FlightLists from "./FlightLists";
 
 function FlightsRecords() {
@@ -81,7 +76,7 @@ function FlightsRecords() {
   };
   async function handleSearch() {
     try {
-      const projectID = "wui79ffqiics";
+      const projectID = "uojmjpx76p25";
       const dayAbbreviation = moment(flightdepartureDate).format("ddd");
       const apiUrl = `https://academics.newtonschool.co/api/v1/bookingportals/flight?day=${dayAbbreviation}&search={"source":"${AirportFrom[2]}","destination":"${AirportTo[2]}"}&filter={"${field}":{"${value}":${sliderValue}}}`;
       const response = await fetch(apiUrl, {

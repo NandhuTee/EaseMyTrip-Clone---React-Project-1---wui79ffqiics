@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
-//import Navbar from "../../../components/NavBar/Navbar";
-import Navbar from "../../../NavBar/Navbar";
-//import { useAuth } from "../../../components/Context";
-import { useAuth } from "../../../../components/Context";
+import Navbar from "../../../components/NavBar/Navbar";
+import { useAuth } from "../../../components/Context";
 import moment from "moment";
-//import Classes from "../Flights.module.css";
-  import Classes from "../Flight.module.css";
+import Classes from "../Flights.module.css";
 import Divider from "@mui/material/Divider";
 import { useNavigate } from "react-router-dom";
 
@@ -31,7 +28,7 @@ function FlightBooking() {
   const [lastNameError, setLastNameError] = useState("");
   const fetchSingleFlightData = async () => {
     try {
-      const projectID = "wui79ffqiics";
+      const projectID = "uojmjpx76p25";
       const response = await fetch(
         `https://academics.newtonschool.co/api/v1/bookingportals/flight/${flightBookingId}`,
         {

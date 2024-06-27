@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import Navbar from "../../../../components/NavBar/Navbar";
-import Classes from "../Flight.module.css";
-//import upiQr from "../../../PhonePayUpiQr.jpg";
-import upiQr from "../../../../Design/PhonePayUpiQr.jpg";
-//import { useAuth } from "../../../components/Context";
-import { useAuth } from "../../../../components/Context";
+import Navbar from "../../../components/NavBar/Navbar";
+import Classes from "../Flights.module.css";
+import upiQr from "../../../Design/PhonePayUpiQr.jpg";
+import { useAuth } from "../../../components/Context";
 import Divider from "@mui/material/Divider";
-
 import PaymentSuccessfull from "../../Payment Successfull/PaymentSuccessfull";
 
 function FlightPayMent() {
@@ -46,7 +43,7 @@ function FlightPayMent() {
         method: "POST",
         headers: {
           Authorization: `Bearer ${bartoken}`,
-          projectID: "wui79ffqiics",
+          projectID: "uojmjpx76p25",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({

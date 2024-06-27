@@ -2,7 +2,7 @@ import React from "react";
 import { Divider } from "@mui/material";
 import Classes from "../Hotels.module.css";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../../Context";
+import { useAuth } from "../../../components/Context";
 
 const HotelResult = ({ searchHotelResults }) => {
   const { setHotelId } = useAuth();
