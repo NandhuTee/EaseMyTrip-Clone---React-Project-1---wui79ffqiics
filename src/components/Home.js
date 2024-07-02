@@ -1,34 +1,26 @@
-import React, { useState } from "react";
-
-// Functional component representing the Home page
-function Home() {
-    // State variables for managing color and toggles
-    const [isRed, setIsRed] = useState(false);
-    const [isBlue, setIsBlue] = useState(false);
-
-    // Function to toggle red color
-    const red = () => {
+import React,{useState} from "react";
+function Home(){
+    const [color,setColor]=useState("");
+    const[isRed,setIsRed]=useState(false);
+    const[isBlue,setIsBlue]=useState(false);
+    const red=()=>{
         setIsRed(!isRed);
     }
-
-    // Function to toggle blue color
-    const blue = () => {
+    const blue=()=>{
         setIsBlue(!isBlue);
     }
-
-    return (
-        <div className="container">
-            <div className={`circle ${isRed ? 'red' : 'blue'}`}>
-                {isBlue ? (
-                    <div className="inner-circle blue"></div>
-                ) : (
-                    <div className="inner-circle red"></div>
-                )}
-            </div>
+    return(
+        <div className="w-[100%] h-[100vh] flex justify-center items-center">
+            {isRed?(<div className="w-[200px] h-[200px] border border-solid border-red-500 rounded-[50%] flex justify-center items-center">
+                {isBlue ? (<div className="w-[50%] h-[50%] rounded-[50%] border border-solid border-blue-500"></div>):(<div className="w-[50%] h-[50%] rounded-[50%] border border-solid border-red-500"></div>)}
+                
+            </div>):(<div className="w-[200px] h-[200px] border border-solid border-blue-500 rounded-[50%] flex justify-center items-center">
+                {isBlue ? (<div className="w-[50%] h-[50%] rounded-[50%] border border-solid border-blue-500"></div>):(<div className="w-[50%] h-[50%] rounded-[50%] border border-solid border-red-500"></div>)}
+            </div>)}
             <button onClick={blue}>Blue</button>
-            <button onClick={red}>Red</button>
+                <button onClick={red}>red</button>
         </div>
-    );
+        
+    )
 }
-
 export default Home;

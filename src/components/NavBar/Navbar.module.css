@@ -266,79 +266,31 @@
     cursor: pointer;
 }
 /* Modal SignUp */
-.modalSignUpSection {
-    position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  max-width: 500px;
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  }
-  .closeBtnSignUp {
-    width: 20px;
-    height: 20px;
-    background: url('https://www.easemytrip.com/images/new-login/home-sub-sprite.png') no-repeat -96px -24px;
-    opacity: 0.3;
+.modalSignUpSection{
+    position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 38%;
+   border: none;
+   border-radius: 5px;
+   box-shadow: 1px 2px 5px black;
+   background-color: white;
+   padding: 4;
+   display: flex;
+   justify-content: center;
+}
+.closeBtnSignUp{
+    width: 11px;
+    height: 11px;
+    background: url(https://www.easemytrip.com/images/new-login/home-sub-sprite.png) no-repeat -96px -24px;
+    opacity: .3;
     background-size: 200px 39px;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 22px;
+    right: 25px;
     cursor: pointer;
-    z-index: 1; /* Ensure it's above other content */
-  }
-
-/* Adjust hover effect for better visibility */
-.closeBtnSignUp:hover {
-    opacity: 0.8;
-  }
-  .errorDisplay {
-    color: red;
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  /* Additional classes */
-  .inputField {
-    width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-sizing: border-box;
-  }
-  
-  .buttonPrimary {
-    width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 5px;
-  background-color: #ef6614;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
-  }
-  .disclaimerText {
-    font-size: 11px;
-    color: #8A8686;
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  /* Flex Container for First Name and Last Name */
-.inputFieldContainer {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .inputFieldContainer > .inputField {
-    flex: 1;
-  }
+}
 .myBookingSection{
     background-image: linear-gradient(261deg,#56CCF2, #2F80ED );
     height: 215px;
