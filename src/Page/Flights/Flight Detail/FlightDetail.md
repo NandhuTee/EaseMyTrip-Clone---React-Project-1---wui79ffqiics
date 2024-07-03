@@ -15,26 +15,6 @@ The layout consists of a main container that includes several key sections:
 5. **Arrival Information**: Provides the arrival time, airport, and date.
 6. **Error Message**: Displays an error message if there is an issue fetching flight data.
 
-### Visual Diagram
-
-```mermaid
-graph TD;
-    A[Main Container] --> B[Flight Information Header];
-    A --> C[Flight Route and ID];
-    C --> C1[Source → Destination];
-    C --> C2[Flight ID];
-    A --> D[Departure Information];
-    D --> D1[Departure Time];
-    D --> D2[Departure Airport (City, IATA)];
-    D --> D3[Departure Date];
-    A --> E[Duration Information];
-    E --> E1[Flight Icon];
-    E --> E2[Flight Duration];
-    A --> F[Arrival Information];
-    F --> F1[Arrival Time];
-    F --> F2[Arrival Airport (City, IATA)];
-    F --> F3[Arrival Date];
-    A --> G[Error Message];
 
 ### Key Elements
 
@@ -86,6 +66,28 @@ The placeholders in the diagram represent dynamic data values fetched from the A
 ## Error Handling
 
 If there is an error fetching flight data, the component will display a red error message below the flight details section. This is achieved through the `hotelDetailError` state, which is set when a fetch request fails.
+### Visual Diagram
+
+```mermaid
+graph TD;
+    A[Main Container] --> B[Flight Information Header];
+    A --> C[Flight Route and ID];
+    C --> C1[Source → Destination];
+    C --> C2[Flight ID];
+    A --> D[Departure Information];
+    D --> D1[Departure Time];
+    D --> D2[Departure Airport (City, IATA)];
+    D --> D3[Departure Date];
+    A --> E[Duration Information];
+    E --> E1[Flight Icon];
+    E --> E2[Flight Duration];
+    A --> F[Arrival Information];
+    F --> F1[Arrival Time];
+    F --> F2[Arrival Airport (City, IATA)];
+    F --> F3[Arrival Date];
+    A --> G[Error Message];
+
+
 
 ## Conclusion
 
