@@ -254,18 +254,7 @@ function Flights() {
         >
           Flights
         </p>
-        <p
-          className={Classes.listOffersFlight}
-          onClick={() => handleOfferTypeChange("HOTELS")}
-        >
-          Hotels
-        </p>
-        <p
-          className={Classes.listOffersFlight}
-          onClick={() => handleOfferTypeChange("RAILS")}
-        >
-          Rails
-        </p>
+        
       
       </div>
       <div className={Classes.flightOffersSection}>

@@ -583,3 +583,15 @@
         display: none;
      }
 }
+
+.flightIcon {
+    margin-right: 5px; /* Adjust spacing between icon and text as needed */
+  }
+  
+  .cityName {
+    vertical-align: middle; /* Align text vertically */
+    margin-top: -5px; /* Adjust vertical alignment as needed */
+  }
+  
+  /* Add other styles as needed */
+  

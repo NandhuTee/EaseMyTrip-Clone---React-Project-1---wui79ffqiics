@@ -37,10 +37,9 @@ function ModalLogin() {
         localStorage.setItem("userId", data.data._id);
         localStorage.setItem("userName", data.data.name);
         localStorage.setItem("photo", "https://pixabay.com/illustrations/icon-user-male-avatar-business-5359553/");
-
+          console.log(data.data.name);
         // Update state
         setUserName(data.data.name); // Update userName state
-
         setIsLoggedIn(true);
         handleCloseLogin();
       } else {

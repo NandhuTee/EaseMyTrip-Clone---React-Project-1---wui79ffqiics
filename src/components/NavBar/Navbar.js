@@ -75,14 +75,6 @@ function Navbar() {
               <Link className={Classes.linkSection} to={"/hotelhome"}>
                 <h3 className={Classes.clickHOTELSH3}>HOTELS</h3>
               </Link>
-              <Divider orientation="vertical" style={{ height: "40%" }} />
-              <Link className={Classes.linkSection} to={"/train"}>
-                <h3 className={Classes.clickTRAINSH3}>TRAINS</h3>
-              </Link>
-              <Divider orientation="vertical" style={{ height: "40%" }} />
-              <Link className={Classes.linkSection} to={"/bus"}>
-                <h3 className={Classes.clickBUSH3}>BUS</h3>
-              </Link>
             </div>
           </div>
           <div className={Classes.navJoinSection}>
@@ -108,7 +100,7 @@ function Navbar() {
             />
           </div>
           <div className={Classes.navAcount}>
-            <p>{isToken ? userName : "My Account"}</p>
+          <p>{isToken ? `Hi, ${userName}` : "My Account"}</p>
             {isDropdownOpen && (
               <div
                 className={Classes.dropdownContent}
@@ -125,22 +117,25 @@ function Navbar() {
                   </div>
                   <div className={Classes.loginBtnSection}>
                     {isToken ? (
-                      userName
+                      <button className={Classes.btnLogin} onClick={handleLoginLogout}>
+                        Logout
+                      </button>
                     ) : (
                       <button className={Classes.btnLogin} onClick={handleOpenLogin}>
-                        LOGIN OR SIGNUP
+                        Login
                       </button>
                     )}
                   </div>
-                  <Divider className={Classes.dividerLogin} />
-                  <div className={Classes.dropMyBookings}>
-                    <ListItemButton onClick={handleMyBooking}>
-                      <p className={Classes.bookingP}>My Booking</p>
-                    </ListItemButton>
-                    <ListItemButton onClick={handleLoginLogout}>
-                      <p className={Classes.bookingP}>Log Out</p>
-                    </ListItemButton>
-                  </div>
+                  {isToken && (
+                    <>
+                      <Divider className={Classes.dividerLogin} />
+                      <div className={Classes.dropMyBookings}>
+                        <ListItemButton onClick={handleMyBooking}>
+                          <p className={Classes.bookingP}>My Booking</p>
+                        </ListItemButton>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
             )}
