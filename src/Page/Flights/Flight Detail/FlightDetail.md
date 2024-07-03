@@ -17,43 +17,24 @@ The layout consists of a main container that includes several key sections:
 
 ### Visual Diagram
 
-+-----------------------------------------------+
-| |
-| +------------------------------+ |
-| | Flight Information | |
-| +------------------------------+ |
-| |
-| +--------------------+ |
-| | {source} → {destination} |
-| | Flight ID: {flightID} |
-| +--------------------+ |
-| |
-| +---------------------------------------+ |
-| | Departure: | |
-| | {departureTime} | |
-| | {AirportFrom[0]} ({AirportFrom[2]}) | |
-| | {departureDay} - {departureDate} | |
-| +---------------------------------------+ |
-| |
-| +---------------------------------------+ |
-| | Duration: | |
-| | [Flight Icon Image] | |
-| | {duration}h 10m | |
-| +---------------------------------------+ |
-| |
-| +---------------------------------------+ |
-| | Arrival: | |
-| | {arrivalTime} | |
-| | {AirportTo[0]} ({AirportTo[2]}) | |
-| | {departureDay} - {departureDate} | |
-| +---------------------------------------+ |
-| |
-| +---------------------------------------+ |
-| | Error (if any): | |
-| | {flightError} | |
-| +---------------------------------------+ |
-+-----------------------------------------------+
-
+```mermaid
+graph TD;
+    A[Main Container] --> B[Flight Information Header];
+    A --> C[Flight Route and ID];
+    C --> C1[Source → Destination];
+    C --> C2[Flight ID];
+    A --> D[Departure Information];
+    D --> D1[Departure Time];
+    D --> D2[Departure Airport (City, IATA)];
+    D --> D3[Departure Date];
+    A --> E[Duration Information];
+    E --> E1[Flight Icon];
+    E --> E2[Flight Duration];
+    A --> F[Arrival Information];
+    F --> F1[Arrival Time];
+    F --> F2[Arrival Airport (City, IATA)];
+    F --> F3[Arrival Date];
+    A --> G[Error Message];
 
 ### Key Elements
 
