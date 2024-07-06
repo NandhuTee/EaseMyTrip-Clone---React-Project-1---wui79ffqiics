@@ -88,6 +88,20 @@ graph TD;
     A --> G[Error Message];
 ```
 
+# Explanation of Connections
+## Authentication Context (authContext):
+
+flightId, AirportFrom, AirportTo, and flightdepartureDate are provided as props to FlightDetail from its parent (ParentComponent or context using useAuth).
+
+## Prop Passing (props in FlightDetail):
+
+FlightDetail receives authentication and flight details (flightId, AirportFrom, AirportTo, flightdepartureDate) via props (...authContext spread operator).
+
+
+## Component Rendering:
+
+FlightDetail uses these props to fetch and display specific flight details based on the provided flightId and other context information.
+
 
 ## Conclusion
 

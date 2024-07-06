@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../../../components/NavBar/Navbar";
-import moment from "moment";
-import Classes from "./FlightRecord.module.css";
-import { useAuth } from "../../../components/Context";
-import FlightFrom from "../Flight DropDown/FlightsFrom";
-import Divider from "@mui/material/Divider";
-import FlightsTo from "../Flight DropDown/FlightsTo";
-import DatePicker from "react-datepicker";
-import FlightLists from "./FlightLists";
+import Navbar from "../../../components/NavBar/Navbar"; // Navbar component import
+import moment from "moment"; // Moment.js for date handling
+import Classes from "./FlightRecord.module.css"; // CSS module import
+import { useAuth } from "../../../components/Context"; // Custom context hook import
+import FlightFrom from "../Flight DropDown/FlightsFrom"; // FlightFrom dropdown component import
+import Divider from "@mui/material/Divider"; // Divider component from Material-UI
+import FlightsTo from "../Flight DropDown/FlightsTo"; // FlightsTo dropdown component import
+import DatePicker from "react-datepicker"; // Date picker component
+import FlightLists from "./FlightLists"; // FlightLists component import
 
 function FlightsRecords() {
+  // State declarations using useState hooks
   const [flightRecordFromOpen, setFlightRecordFromOpen] = useState(false);
   const [flightRecordToOpen, setFlightRecordToOpen] = useState(false);
   const [flightTraveller, setFlightTraveller] = useState(false);
@@ -20,13 +21,15 @@ function FlightsRecords() {
     flightdepartureDate,
     setFlightDepartureDate,
     seatCount, setSeatCount,seatAdultsCount, setSeatAdultsCount,seatChildrenCount, setSeatChildrenCount,seatInfantCount, setSeatInfantCount
-  } = useAuth();
-  const [searchResults, setSearchResults] = useState([]);
-  const [errorPost, setErrorPost] = useState("");
-  const [sliderValue, setSliderValue] = useState(100);
-  const [value, setValue] = useState("$gte");
-  const [field, setField] = useState("ticketPrice");
+  } = useAuth();// Destructuring from custom context hook useAuth
 
+  const [searchResults, setSearchResults] = useState([]); // State for search results
+  const [errorPost, setErrorPost] = useState(""); // State for error handling
+  const [sliderValue, setSliderValue] = useState(100); // State for slider value
+  const [value, setValue] = useState("$gte"); // State for slider value condition
+  const [field, setField] = useState("ticketPrice"); // State for field to filter
+  
+  // Custom input component for date picker
   const CustomInput = ({ value, onClick }) => (
     <input
       type="text"
@@ -37,6 +40,7 @@ function FlightsRecords() {
     />
   );
 
+  // Functions to handle opening/closing dropdowns and increment/decrement seat counts
   const handleFlightFormOpen = () => {
     setFlightRecordFromOpen(!flightRecordFromOpen);
   };
@@ -74,6 +78,8 @@ function FlightsRecords() {
     setSeatCount((prevCount) => (prevCount > 1 ? prevCount - 1 : 1));
     setSeatInfantCount((prevCount) => (prevCount > 1 ? prevCount - 1 : 0));
   };
+
+  // Function to handle search logic
   async function handleSearch() {
     try {
       const projectID = "uojmjpx76p25";
@@ -98,11 +104,12 @@ function FlightsRecords() {
     }
   }
 
-  
+  // useEffect hook to trigger search on sliderValue change
   useEffect(() => {
     handleSearch();
   }, [sliderValue]);
 
+// Handlers for slider and checkbox changes
   const handleSliderChange = (event) => {
     setSliderValue(event.target.value);
   };
@@ -110,11 +117,13 @@ function FlightsRecords() {
     setSliderValue(value === sliderValue ? null : value);
   };
 
+// Handler to set filter criteria
   const handleClickSet = (type, key, data) => {
     setField(type);
     setValue(key);
     setSliderValue(data);
   };
+  // JSX rendering
   return (
     <div>
       <Navbar />
