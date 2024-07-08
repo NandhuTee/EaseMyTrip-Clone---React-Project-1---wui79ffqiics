@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Classes from "./Navbar.module.css";
 import Avatar from '@mui/material/Avatar';
-import { Box, Divider, Modal } from "@mui/material";
+import { Divider } from "@mui/material";
 import { Link, NavLink } from "react-router-dom";
 import ListItemButton from "@mui/material/ListItemButton";
 import { useAuth } from "../Context";
@@ -10,12 +10,12 @@ import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isDropdownHelpOpen, setDropdownHelpOpen] = useState(false); // State for customer care dropdown
   const [userName, setUserName] = useState(localStorage.getItem("userName"));
   const [userIcon, setUserIcon] = useState(localStorage.getItem("photo"));
   const [isToken, setIsToken] = useState(localStorage.getItem("token"));
   const navigate = useNavigate();
   const { openLogin, setOpenLogin, isLoggedIn, setIsLoggedIn } = useAuth();
-  const [isDropdownhelpOpen, setDropdownhelpOpen] = useState(false);
 
   useEffect(() => {
     setUserName(localStorage.getItem("userName"));
@@ -31,20 +31,22 @@ function Navbar() {
     setDropdownOpen(false);
   };
 
-  const openDropdownhelp = () => {
-    setDropdownhelpOpen(true);
+  const openDropdownHelp = () => {
+    setDropdownHelpOpen(true);
   };
 
-  const closeDropdownhelp = () => {
-    setDropdownhelpOpen(false);
+  const closeDropdownHelp = () => {
+    setDropdownHelpOpen(false);
   };
 
-  const handleLoginLogout = () => {
-    if (isToken) {
-      localStorage.removeItem("token");
-      setIsLoggedIn(false);
-      setUserName(""); // Clear userName state on logout
-    }
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("photo");
+    setIsLoggedIn(false);
+    setUserName(""); // Clear userName state on logout
+    setUserIcon(""); // Clear userIcon state on logout
+    setIsToken(null); // Clear token state on logout
   };
 
   const handleMyBooking = () => {
@@ -77,16 +79,41 @@ function Navbar() {
               </Link>
             </div>
           </div>
-          <div className={Classes.navJoinSection}>
-            <img
-              className={Classes.joinIcon}
-              src="https://www.easemytrip.com/emt-pro/img/emtpro-header-icon.svg"
-              alt="Join Icon"
-            />
-          </div>
         </div>
       </div>
       <div className={Classes.navUser}>
+        {/* Customer Care Section */}
+        <div
+          className={Classes.customerCare}
+          onMouseEnter={openDropdownHelp}
+          onMouseLeave={closeDropdownHelp}
+        >
+          <div className={Classes.careIcon}>
+            {/* Replace the image with text or icon */}
+            <p className={Classes.customerCareText}>Customer Care</p>
+          </div>
+          <div className={Classes.navCare}>
+            {isDropdownHelpOpen && (
+              <div
+                className={Classes.dropdownCareContent}
+                onMouseEnter={openDropdownHelp}
+                onMouseLeave={closeDropdownHelp}
+              >
+                <div className={Classes.careBox}>
+                  <div className={Classes.careCall}>
+                    <p>Call us at:</p>
+                    <p className={Classes.careNumber}>1800-123-456</p>
+                  </div>
+                  <Divider className={Classes.dividerCare} />
+                  <div className={Classes.careMail}>
+                    <p>Email us at:</p>
+                    <p className={Classes.careEmail}>support@easemytrip.com</p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
         <div
           className={Classes.myAcount}
           onMouseEnter={openDropdown}
@@ -100,7 +127,7 @@ function Navbar() {
             />
           </div>
           <div className={Classes.navAcount}>
-          <p>{isToken ? `Hi, ${userName}` : "My Account"}</p>
+            <p>{isToken ? `Hi, ${userName}` : "My Account"}</p>
             {isDropdownOpen && (
               <div
                 className={Classes.dropdownContent}
@@ -117,7 +144,7 @@ function Navbar() {
                   </div>
                   <div className={Classes.loginBtnSection}>
                     {isToken ? (
-                      <button className={Classes.btnLogin} onClick={handleLoginLogout}>
+                      <button className={Classes.btnLogin} onClick={handleLogout}>
                         Logout
                       </button>
                     ) : (

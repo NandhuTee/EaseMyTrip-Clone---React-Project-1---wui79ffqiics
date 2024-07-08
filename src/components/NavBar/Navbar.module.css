@@ -43,6 +43,120 @@
     width: 100%;
    
 }
+.navUser {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.customerCare {
+  position: relative;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.careIcon {
+  display: flex;
+  align-items: center;
+}
+
+.customerCareIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.navCare {
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.dropdownCareContent {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  z-index: 10;
+}
+
+.careBox {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.careCall, .careMail {
+  margin-bottom: 8px;
+}
+
+.careNumber, .careEmail {
+  font-weight: bold;
+}
+
+.dividerCare {
+  margin: 8px 0;
+}
+/*customer care*/
+.navUser {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .customerCare {
+    position: relative;
+    margin-right: 20px; /* Adjust margin as needed */
+    cursor: pointer;
+  }
+  
+  .careIcon {
+    display: flex;
+    align-items: center;
+  }
+  
+  .customerCareText {
+    font-size: 16px;
+    color: #000; /* Adjust color as needed */
+  }
+  
+  .navCare {
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .dropdownCareContent {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    z-index: 10;
+  }
+  
+  .careBox {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .careCall, .careMail {
+    margin-bottom: 8px;
+  }
+  
+  .careNumber, .careEmail {
+    font-weight: bold;
+  }
+  
+  .dividerCare {
+    margin: 8px 0;
+  }
+  
 /* Text Styles */
 .clickFLIGHTSH3{
     font-weight: 500;

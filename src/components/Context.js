@@ -46,8 +46,8 @@ export function AuthProvider({ children }) {
   const [seatInfantCount, setSeatInfantCount] = useState(0);
   const [seatHotelAdultsCount, setSeatHotelAdultsCount] = useState(1);
   const [seatHotelChildrenCount, setSeatHotelChildrenCount] = useState(0);
-  const [guestName, setGuestName] = useState("");
-  const [guestLastName, setGuestLastName] = useState("");
+  const [firstName, setGuestName] = useState("");
+  const [lastName, setGuestLastName] = useState("");
   const [fare, setFare] = useState("");
   const [bookingId, setBookingId] = useState("");
   const [bookingType, setBookingType] = useState("");
@@ -86,8 +86,8 @@ export function AuthProvider({ children }) {
         isLoggedIn, setIsLoggedIn,
         flightBookingId, setFlightBookingId,
         seatCount, setSeatCount,
-        guestLastName, setGuestLastName,
-        guestName, setGuestName,
+        lastName, setGuestLastName,
+        firstName, setGuestName,
         seatHotelCount, setSeatHotelCount,
         seatAdultsCount, setSeatAdultsCount,seatChildrenCount, setSeatChildrenCount,
         seatInfantCount, setSeatInfantCount,

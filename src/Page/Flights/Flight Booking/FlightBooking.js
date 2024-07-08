@@ -6,6 +6,7 @@ import Classes from "../Flights.module.css";
 import Divider from "@mui/material/Divider";
 import { useNavigate } from "react-router-dom";
 
+
 function FlightBooking() {
   const [hotelDetailError, setHotelDetailError] = useState(null);
   const [flightBookingDetailData, setFlightBookingDetailData] = useState([]);

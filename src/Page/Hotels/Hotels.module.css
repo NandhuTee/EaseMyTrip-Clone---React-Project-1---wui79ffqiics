@@ -7,6 +7,8 @@
     align-items: center;
    
 }
+/*searchbar*/
+
 .searchBarHotelHeaders{
     background-color: #2f81ed;
     background-image: linear-gradient(to right, #2F80ED, #56CCF2);
@@ -867,6 +869,7 @@
 .paymentUpiInput:focus{
     outline: none;
 }
+
 @media(max-width:600px){
     .searchBarHotelHeaders{
         height: auto;

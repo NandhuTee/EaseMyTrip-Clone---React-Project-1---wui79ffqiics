@@ -16,7 +16,7 @@ function HotelDetail() {
   useEffect(() => {
     const fetchHotelData = async () => {
       try {
-        //const projectID = "2zqsmiro66wm";
+        
         const projectID = "uojmjpx76p25";
         const response = await fetch(
           `https://academics.newtonschool.co/api/v1/bookingportals/hotel/${hotelId}`,
