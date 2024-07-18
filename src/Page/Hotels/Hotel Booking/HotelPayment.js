@@ -1,22 +1,24 @@
 import React, { useState } from "react";
-import Navbar from "../../../components/NavBar/Navbar";
-import Classes from "../Hotels.module.css";
-import upiQr from "../../../Design/PhonePayUpiQr.jpg";
-import { useAuth } from "../../../components/Context";
-import Divider from "@mui/material/Divider";
-import PaymentSuccessfull from "../../Payment Successfull/PaymentSuccessfull";
+import Navbar from "../../../components/NavBar/Navbar"; // Importing Navbar component
+import Classes from "../Hotels.module.css"; // Importing CSS modules
+import upiQr from "../../../Design/PhonePayUpiQr.jpg"; // Importing UPI QR image
+import { useAuth } from "../../../components/Context"; // Importing useAuth context hook
+import Divider from "@mui/material/Divider"; // Importing Divider component from Material-UI
+import PaymentSuccessfull from "../../Payment Successfull/PaymentSuccessfull"; // Importing PaymentSuccessfull component
 
 function HotelPayment() {
-  const [selectedOption, setSelectedOption] = useState("UPI");
-  const bartoken = localStorage.getItem("token");
-  const [showSuccessfull, setShowSuccessfull] = useState(false);
-  const { fare, bookingId, bookingType, seatCount } = useAuth();
-  const [allFieldsFilled, setAllFieldsFilled] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("UPI"); // State for selected payment option (initially UPI)
+  const bartoken = localStorage.getItem("token"); // Retrieving token from localStorage
+  const [showSuccessfull, setShowSuccessfull] = useState(false); // State for showing payment success message
+  const { fare, bookingId, bookingType, seatCount } = useAuth(); // Using useAuth hook to retrieve authentication context values
+  const [allFieldsFilled, setAllFieldsFilled] = useState(false); // State for checking if all payment fields are filled
 
+  // Handler for changing payment option
   const handleOptionClick = (option) => {
     setSelectedOption(option);
   };
 
+  // Handler for input change (validates UPI ID or card details based on selected option)
   const handleInputChange = (event) => {
     const isUPIOption = selectedOption === "UPI";
     const isDebitCreditCardOption = selectedOption === "DebitCreditCard";
@@ -24,25 +26,25 @@ function HotelPayment() {
     let isValid = false;
 
     if (isUPIOption) {
-      const isValidEmail = /^[^\s@]+@[^\s@]+$/.test(event.target.value.trim());
+      const isValidEmail = /^[^\s@]+@[^\s@]+$/.test(event.target.value.trim()); // Basic email validation for UPI ID
       isValid = isValidEmail;
     } else if (isDebitCreditCardOption) {
-      isValid = event.target.value.trim() !== "";
+      isValid = event.target.value.trim() !== ""; // Checking if card details are filled
     }
 
     setAllFieldsFilled(isValid);
   };
 
+  // Function to fetch payment data from API
   const fetchPaymentData = () => {
     if (allFieldsFilled) {
-      // Your existing fetchPaymentData logic
-      const api =
-        "https://academics.newtonschool.co/api/v1/bookingportals/booking";
+      // Fetching payment data if all fields are filled
+      const api = "https://academics.newtonschool.co/api/v1/bookingportals/booking";
 
       fetch(api, {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${bartoken}`,
+          Authorization: `Bearer ${bartoken}`, // Setting Authorization header with token
           projectID: "uojmjpx76p25",
           "Content-Type": "application/json",
         },
@@ -56,7 +58,7 @@ function HotelPayment() {
         }),
       }).then((response) => {
         if (response.ok) {
-          setShowSuccessfull(!showSuccessfull);
+          setShowSuccessfull(!showSuccessfull); // Showing success message on successful payment
         }
       });
     }
@@ -64,17 +66,21 @@ function HotelPayment() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar /> {/* Rendering Navbar component */}
+      {/* Main content area */}
       <div className="w-[100%] h-[100%] bg-[#e8f2fa] flex justify-center">
         <div className=" w-[90%] h-[100%] flex max-[600px]:flex-col flex-row gap-[20px] justify-between mb-[20px]">
+          {/* Left section for payment options */}
           <div className=" w-[70.5%] max-[600px]:w-[100%] mt-[20px]">
             <div className={Classes.personalDetailHotel}>
               <div className={Classes.bookingHotelHeader}>
                 <div className={Classes.PersPaymentmg}></div>
                 <span>Payment Mode</span>
               </div>
+              {/* Payment options section */}
               <div className="w-[100%] h-[100%] flex">
                 <div className={Classes.paymentLeftSection}>
+                  {/* UPI payment option */}
                   <div
                     style={{
                       borderTop: "2px solid lightgray",
@@ -94,6 +100,7 @@ function HotelPayment() {
                         marginRight: "10px",
                       }}
                       src="https://starlinebattery.com/wp-content/uploads/2022/08/UPI_logo_PNG-300x300-1.jpg"
+                      alt="UPI Logo"
                     />
                     <div>
                       <h3 style={{ color: "#008cff" }}>UPI Options</h3>
@@ -102,6 +109,7 @@ function HotelPayment() {
                       </p>
                     </div>
                   </div>
+                  {/* Debit/Credit Card payment option */}
                   <div
                     style={{
                       borderTop: "2px solid lightgray",
@@ -122,16 +130,19 @@ function HotelPayment() {
                         marginRight: "10px",
                       }}
                       src="https://banner2.cleanpng.com/20180630/iyq/kisspng-credit-card-debit-card-clip-art-5b37907f1a4f07.4745129515303681271078.jpg"
+                      alt="Debit/Credit Card Logo"
                     />
                     <div>
                       <h4>Credit/Cebit/ATM Card</h4>
                       <p style={{ fontSize: "11px", color: "gray" }}>
-                        Visa,MasterCard,Amex,Rupay And <br></br> More
+                        Visa,MasterCard,Amex,Rupay And <br /> More
                       </p>
                     </div>
                   </div>
                 </div>
+                {/* Payment form section */}
                 <div className="w-[67%] max-[600px]:w-[100%] pt-[2%] pb-[2%] pl-[3%]">
+                  {/* UPI payment form */}
                   {selectedOption === "UPI" && (
                     <div className="w-[100%] mt-[13px] flex flex-col justify-center items-center">
                       <span className="  w-[100%] text-[13px] font-[600] flex justify-between items-center">
@@ -141,9 +152,10 @@ function HotelPayment() {
                       <div className="w-[100%] mt-[6px] flex">
                         <div className="w-[49%]">
                           <input
-                          type="email"
+                            type="email"
                             className={Classes.paymentUpiInput}
                             onChange={handleInputChange}
+                            placeholder="Enter Your UPI ID"
                           />
                         </div>
                         <div
@@ -156,9 +168,11 @@ function HotelPayment() {
                           <img
                             style={{ width: "150px", marginLeft: "10px" }}
                             src={upiQr}
+                            alt="UPI QR Code"
                           />
                         </div>
                       </div>
+                      {/* Total fare display */}
                       <div className="w-[100%] mt-[25px] flex items-center justify-between">
                         <div className="w-[50%] flex items-center">
                           <span className=" w-auto text-[#333333] text-[14px] font-bold pt-[5px] flex items-center gap-[5px]">
@@ -168,6 +182,7 @@ function HotelPayment() {
                             {Math.floor(fare * seatCount)}
                           </span>
                         </div>
+                        {/* Payment button */}
                         <div
                           className={`w-[40%] items-center flex justify-end  ${
                             allFieldsFilled
@@ -188,9 +203,10 @@ function HotelPayment() {
                       </div>
                     </div>
                   )}
+                  {/* Debit/Credit Card payment form */}
                   {selectedOption === "DebitCreditCard" && (
                     <div style={{ padding: "10px 20px 20px 20px" }}>
-                      <div className="w -[100%] flex flex-col">
+                      <div className="w-[100%] flex flex-col">
                         <label className="text-[15px] pt-[3%]">
                           Card Number
                         </label>
@@ -201,7 +217,7 @@ function HotelPayment() {
                           onChange={handleInputChange}
                         />
                       </div>
-                      <div className="w -[100%] flex flex-col">
+                      <div className="w-[100%] flex flex-col">
                         <label className="text-[15px] pt-[3%]">
                           Name on card
                         </label>
@@ -243,6 +259,7 @@ function HotelPayment() {
                           </div>
                         </div>
                       </div>
+                      {/* Total fare display */}
                       <div className="w-[100%] mt-[25px] flex items-center justify-between">
                         <div className="w-[50%] flex items-center">
                           <span className=" w-auto text-[#333333] text-[14px] font-bold pt-[5px] flex items-center gap-[5px]">
@@ -252,6 +269,7 @@ function HotelPayment() {
                             {Math.floor(fare * seatCount)}
                           </span>
                         </div>
+                        {/* Payment button */}
                         <div
                           className={`w-[40%] items-center flex justify-end  ${
                             allFieldsFilled
@@ -270,6 +288,7 @@ function HotelPayment() {
                           </span>
                         </div>
                       </div>
+                      {/* Terms and conditions */}
                       <p className="w-[100%] text-[12px] mt-[20px]">
                         By continuing to pay, I understand and agree with the{" "}
                         <span style={{ color: "#008cff" }}>privacy policy</span>
@@ -291,6 +310,7 @@ function HotelPayment() {
               </div>
             </div>
           </div>
+          {/* Right section for price summary */}
           <div className="w-[26%] max-[600px]:w-[100%] mt-[60px] flex flex-col">
             <div className={Classes.hotelBookingAmont}>
               <div className={Classes.hotelBokkingAmountHeader}>
@@ -299,6 +319,7 @@ function HotelPayment() {
                 </div>
               </div>
               <div className=" w-[100%]">
+                {/* Fare details */}
                 <div className="w-[100%] border-b-2  border-b-[#e5e3e3] flex justify-between">
                   <div className="w-[66%] pl-[4%] text-[13px] text-[#1a1a1a] h-[35px] flex items-center">
                     Adult x 1
@@ -308,15 +329,17 @@ function HotelPayment() {
                   </div>
                 </div>
                 <Divider flexItem />
+                {/* Seat count */}
                 <div className="w-[100%] border-b-2  border-b-[#e5e3e3] flex justify-between">
                   <div className="w-[66%] pl-[4%] text-[13px] text-[#1a1a1a] h-[35px] flex items-center">
-                    Travelare
+                    Traveller
                   </div>
                   <div className="w-[30%] text-[#1a1a1a] text-[12px] h-[35px] font-[600] flex items-center gap-[5px]">
                     {seatCount} Traveller(s)
                   </div>
                 </div>
                 <Divider flexItem />
+                {/* Total fare */}
                 <div className="w-[100%] flex justify-between">
                   <div className="w-[66%] pl-[4%] text-[18px] text-[#d63b05] h-[35px] font-bold flex items-center">
                     Grand Total
@@ -330,6 +353,7 @@ function HotelPayment() {
             </div>
           </div>
         </div>
+        {/* Showing payment success message */}
         {showSuccessfull && <PaymentSuccessfull />}
       </div>
     </div>

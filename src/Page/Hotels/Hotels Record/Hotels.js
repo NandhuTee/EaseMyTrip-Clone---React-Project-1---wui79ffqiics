@@ -2,15 +2,16 @@ import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import moment from "moment";
 import Classes from "../Hotels.module.css";
-import Navbar from "../../../components/NavBar/Navbar";
+import Navbar from "../../../components/NavBar/Navbar"; // Importing Navbar component
 import "react-datepicker/dist/react-datepicker.css";
 import _debounce from "lodash/debounce";
-import { Divider} from "@mui/material";
-import { useAuth } from "../../../components/Context";
+import { Divider } from "@mui/material";
+import { useAuth } from "../../../components/Context"; // Importing context hook
 import ListItemButton from "@mui/material/ListItemButton";
-import HotelResult from "./HotelResult";
+import HotelResult from "./HotelResult"; // Importing HotelResult component
 
 function Hotels() {
+  // Destructuring values from context using useAuth hook
   const {
     setHotelLocation,
     hotelLocation,
@@ -20,9 +21,15 @@ function Hotels() {
     setSearchHotelResults,
     isSelectedDayCheckOut,
     setSelectedDayCheckOut,
-    seatHotelCount, setSeatHotelCount,seatHotelAdultsCount,
-    setSeatHotelAdultsCount,seatHotelChildrenCount,setSeatHotelChildrenCount
+    seatHotelCount,
+    setSeatHotelCount,
+    seatHotelAdultsCount,
+    setSeatHotelAdultsCount,
+    seatHotelChildrenCount,
+    setSeatHotelChildrenCount
   } = useAuth();
+
+  // State variables initialization
   const [page, setPage] = useState(1);
   const [isFetching, setIsFetching] = useState(false);
   const [initialApiCallMade, setInitialApiCallMade] = useState(false);
@@ -30,62 +37,34 @@ function Hotels() {
   const [originalHotelData, setOriginalHotelData] = useState([]);
   const [hotelErrorPost, setHotelErrorPost] = useState("");
   const [sortOption, setSortOption] = useState("");
-  
   const [selectedOption, setSelectedOption] = useState(0);
   const [value, setValue] = useState("$gte");
   const [field, setField] = useState("rating");
+
+  // Array of locations and filtered locations for dropdown
   const locations = [
-    "Mumbai",
-    "Delhi",
-    "Bangalore",
-    "Kolkata",
-    "Chennai",
-    "Hyderabad",
-    "Pune",
-    "Ahmedabad",
-    "Surat",
-    "Jaipur",
-    "Lucknow",
-    "Kanpur",
-    "Nagpur",
-    "Indore",
-    "Thane",
-    "Bhopal",
-    "Visakhapatnam",
-    "Pimpri-Chinchwad",
-    "Patna",
-    "Vadodara",
-    "Ghaziabad",
-    "Jodhpur",
-    "Dhanbad",
-    "Gwalior",
-    "Rajkot",
-    "Kalyan-Dombivali",
-    "Vasai-Virar",
-    "Ludhiana",
-    "Meerut",
-    "Amritsar",
-    "Agra",
-    "Faridabad",
-    "Coimbatore",
-    "Varanasi",
-    "Allahabad",
-    "Vijayawada",
-    "Jabalpur",
-    "Raipur",
-    "Srinagar",
+    "Mumbai", "Delhi", "Bangalore", "Kolkata", "Chennai", "Hyderabad", "Pune", "Ahmedabad",
+    "Surat", "Jaipur", "Lucknow", "Kanpur", "Nagpur", "Indore", "Thane", "Bhopal", "Visakhapatnam",
+    "Pimpri-Chinchwad", "Patna", "Vadodara", "Ghaziabad", "Jodhpur", "Dhanbad", "Gwalior", "Rajkot",
+    "Kalyan-Dombivali", "Vasai-Virar", "Ludhiana", "Meerut", "Amritsar", "Agra", "Faridabad",
+    "Coimbatore", "Varanasi", "Allahabad", "Vijayawada", "Jabalpur", "Raipur", "Srinagar"
   ];
   const [filteredLocations, setFilteredLocations] = useState(locations);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [HotelTraveller, setHotelTraveller] = useState(false);
+
+  // Function to open dropdown
   const openDropdown = () => {
     setDropdownOpen(true);
   };
 
-  const closeDropdown=()=>{
+  // Function to close dropdown
+  const closeDropdown = () => {
     console.log("Closing dropdown");
     setDropdownOpen(false);
   };
+
+  // Custom input component for check-in date picker
   const CustomInput = ({ value, onClick }) => (
     <input
       className={Classes.hotelInputDatepickIn}
@@ -95,6 +74,8 @@ function Hotels() {
       readOnly
     />
   );
+
+  // Custom input component for check-out date picker
   const CustomInputCheckout = ({ value, onClick }) => (
     <input
       className={Classes.hotelinputDatepickOut}
@@ -104,33 +85,38 @@ function Hotels() {
       readOnly
     />
   );
+
+  // Handler for location input change
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
     setHotelLocation(inputValue);
 
-    const filtered = inputValue ==="" ? locations :locations.filter((location) =>
-    location.toLowerCase().includes(inputValue.toLowerCase())
+    const filtered = inputValue === "" ? locations : locations.filter((location) =>
+      location.toLowerCase().includes(inputValue.toLowerCase())
     );
 
     setFilteredLocations(filtered);
   };
-  async function handleHotelSearch() {
 
+  // Async function to handle hotel search
+  async function handleHotelSearch() {
     if (isFetching || (initialApiCallMade && page < 1)) {
       return;
     }
+
     try {
       setIsFetching(true);
-      //const projectID = "2zqsmiro66wm";
       const projectID = "uojmjpx76p25";
       const formattedDate = moment(hotelDepartureDate).format("dddd");
       let apiUrlHotel = `https://academics.newtonschool.co/api/v1/bookingportals/hotel?search={"location":"${hotelLocation}"}&day="${formattedDate}"&filter={"${field}":{"${value}":${selectedOption}}}&limit=10&page=${page}`;
+
       const response = await fetch(apiUrlHotel, {
         method: "GET",
         headers: {
           projectID: projectID,
         },
       });
+
       if (response.ok) {
         setPage((prevPage) => prevPage + 1);
         const hotelData = await response.json();
@@ -138,6 +124,7 @@ function Hotels() {
           ...prevData,
           ...hotelData.data.hotels,
         ]);
+
         if (!initialApiCallMade) {
           setInitialApiCallMade(true);
         }
@@ -152,6 +139,8 @@ function Hotels() {
       setIsFetching(false);
     }
   }
+
+  // Debounced scroll handler for infinite scroll functionality
   const handleScroll = _debounce(() => {
     const scrollTop = document.documentElement.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight;
@@ -159,10 +148,10 @@ function Hotels() {
 
     if (scrollTop + clientHeight >= scrollHeight - 100) {
       handleHotelSearch();
-      // filterByPriceRange(lowerPrice,highPrice);
     }
   }, 200);
 
+  // Effect hook to add and remove scroll event listener
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
@@ -171,67 +160,78 @@ function Hotels() {
     };
   }, [handleScroll]);
 
+  // Handler for setting hotel location
   const handleSetLocation = (e) => {
     setHotelLocation(e.target.value);
   };
+
+  // Handler for checkbox rating change
   const handleCheckboxRatingChange = (value) => {
     setSelectedOption(value === selectedOption ? 0 : value);
   };
 
+  // Handler for location click
   const handleLocationClick = (location) => {
     setHotelLocation(location);
-   
   };
+
+  // Handler for setting filter options
   const handleClickSet = (type, key, data) => {
     setField(type);
-    setValue(key === value ? "$gte":key);
+    setValue(key === value ? "$gte" : key);
     setSelectedOption(data);
     setPage(1);
     setSearchHotelResults([]);
-    // handleHotelSearch();
   };
-  
+
+  // Function to reset filters
   function resetFilters() {
     setSearchHotelResults([...originalHotelData]);
   }
+
+  // Effect hook to initialize original hotel data
   useEffect(() => {
     if (!originalHotelData && searchHotelResults) {
       setOriginalHotelData([...searchHotelResults]);
     }
   }, [searchHotelResults, originalHotelData]);
-  // const resetFilters = () => {
-  //   setSelectedRating(null);
-  //   setSelectedPriceRange(null);
-  //   setSelectedRoomTypes([]);
-  // };
+
+  // Effect hook to handle search on selected option, field, and value change
   useEffect(() => {
     handleHotelSearch();
     setPage(1);
-  }, [selectedOption,field,value]);
+  }, [selectedOption, field, value]);
 
+  // Handler for search button click
   const handleSearch = () => {
     setSearchHotelResults([]);
     handleHotelSearch();
   };
 
+  // Handler for toggling hotel traveller panel
   const handleHotelTraveller = () => {
     setHotelTraveller(!HotelTraveller);
   };
 
+  // Handler for incrementing hotel adults seat count
   const incrementHotelAdultsSeatCount = () => {
     setSeatHotelCount((prevCount) => prevCount + 1);
     setSeatHotelAdultsCount((prevCount) => prevCount + 1);
   };
 
+  // Handler for decrementing hotel adults seat count
   const decrementHotelAdultsSeatCount = () => {
     setSeatHotelCount((prevCount) => (prevCount > 1 ? prevCount - 1 : 1));
     setSeatHotelAdultsCount((prevCount) => (prevCount > 1 ? prevCount - 1 : 1));
   };
+
+  // Handler for incrementing hotel children seat count
   const incrementHotelChildrenSeatCount = () => {
     setSeatHotelCount((prevCount) => prevCount + 1);
     setSeatHotelChildrenCount((prevCount) => prevCount + 1);
   };
 
+  // Handler for decrementing hotel children seat count
   const decrementHotelChildrenSeatCount = () => {
     setSeatHotelCount((prevCount) => (prevCount > 1 ? prevCount - 1 : 1));
     setSeatHotelChildrenCount((prevCount) => (prevCount > 1 ? prevCount - 1 : 0));
@@ -348,26 +348,7 @@ function Hotels() {
           </div>
         </div>
       </div>
-      {/* <div className={Classes.rightHeaderHotel}>
-        <div>
-          <h5>hotel</h5>
-        </div>
-        <div className={Classes.hotelSorting}>
-          <input></input>
-          <p>Sort By:</p>
-          <select
-            onChange={(e) => handleSort(e.target.value)}
-            value={sortOption}
-            // open={isOpen}
-            name="selectedFruit"
-          >
-            <option value="">-- Select Option --</option>
-            <option value="price">Price (Low to High)</option>
-            <option value="priceDesc">Price (High to Low)</option>
-            <option value="rating">Customer Ratings</option>
-          </select>
-        </div>
-      </div> */}
+      
 
       <div className={Classes.hotelbackgroundSection}>
         <div className={Classes.hotelMainSection}>
