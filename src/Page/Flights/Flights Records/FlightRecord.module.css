@@ -1,4 +1,5 @@
-.flightSearchSection{
+/* Flight Search Section */
+.flightSearchSection {
     background-color: #2f81ed;
     background-image: linear-gradient(to right, #2F80ED, #56CCF2);
     width: 100%;
@@ -8,7 +9,9 @@
     justify-content: center;
     align-items: center;
 }
-.searchBarFlightDiv{
+
+/* Search Bar Container */
+.searchBarFlightDiv {
     height: 50%;
     width: 80%;
     display: flex;
@@ -16,28 +19,27 @@
     gap: 10px;
     border-radius: 6px;
 }
-.mainDivFlightRecordSearch{
+
+/* Main Search Div for Flight Records */
+.mainDivFlightRecordSearch {
     height: 100%;
     width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: hsla(0,0%,100%,.1);
+    background-color: hsla(0, 0%, 100%, .1);
 }
-.searchFromFlightRecord{
+
+/* Search Input Styles */
+.searchFromFlightRecord, .searchToFlightRecord {
     height: 90%;
     width: 95%;
-    
 }
-.searchToFlightRecord{
-    height: 90%;
-    width: 95%;
-    
-}
-.inputFlightRecord{
+
+.inputFlightRecord {
     height: 60%;
     width: 100%;
-    background-color: hsla(0,0%,100%,.1);
+    background-color: hsla(0, 0%, 100%, .1);
     border-radius: 5px;
     border: none;
     margin-top: 5px;
@@ -45,10 +47,13 @@
     font-weight: 600;
     color: #fff;
 }
-.inputFlightRecord:focus{
+
+.inputFlightRecord:focus {
     outline: none;
 }
-.searchButtonFlightRecords{
+
+/* Search Button Styles */
+.searchButtonFlightRecords {
     height: 80%;
     width: 100%;
     background-image: linear-gradient(to right, #56CCF2);
@@ -65,24 +70,22 @@
     cursor: pointer;
 }
 
-/* Flight Lists */
-.flightDataBox{
+/* Flight Lists Container */
+.flightDataBox {
     border: 1px solid #c9d7e1;
-    box-shadow: rgb(0 0 0 / 20%) 0px 3px 7px;;
+    box-shadow: rgb(0 0 0 / 20%) 0px 3px 7px;
     background-color: #fff;
     width: 100%;
-    /* height: 150px; */
     height: 100%;
     margin-top: 20px;
-    border: none;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
-/* Fliter Data */
 
-.flightDataPage{
+/* Filter Data Section */
+.flightDataPage {
     margin-top: 12px;
     width: 100%;
     padding: 15px;
@@ -90,12 +93,15 @@
     background-color: #FFF;
     position: sticky;
 }
-.flightDataDeparture ul{
+
+/* Flight Departure Filter */
+.flightDataDeparture ul {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
 }
-.flightDataDeparture ul li{
+
+.flightDataDeparture ul li {
     list-style: none;
     font-size: 9px;
     font-weight: 600;
@@ -107,47 +113,55 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-  .filterImageSun{
+}
+
+/* Filter Icons */
+.filterImageSun {
     margin-top: 5px;
     width: 28px;
     height: 25px;
     background: url(https://flight.easemytrip.com/Content/CSS/filter-sprite.png);
     background-position: -5px -42px;
-  }
-  .filterImageMid{
+}
+
+.filterImageMid {
     margin-top: 5px;
     width: 24px;
     height: 25px;
     background: url(https://flight.easemytrip.com/Content/CSS/filter-sprite.png);
     background-position: -38px -43px;
-  }
-  .filterImageEve{
+}
+
+.filterImageEve {
     margin-top: 5px;
     width: 20px;
     height: 25px;
     background: url(https://flight.easemytrip.com/Content/CSS/filter-sprite.png);
     background-position: -66px -42px;
-  }
-  .filterImageNight{
+}
+
+.filterImageNight {
     margin-top: 5px;
     width: 16px;
     height: 25px;
     background: url(https://flight.easemytrip.com/Content/CSS/filter-sprite.png);
     background-position: -95px -43px;
-  }
+}
 
-  .dropDownArrowChild{
+/* Dropdown Arrow */
+.dropDownArrowChild {
     border: solid white;
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 3px;
-    transform: rotate( 45deg );
+    transform: rotate(45deg);
     position: relative;
     top: -1px;
-    margin-left: 10px 
-  }
-  .travellerInput{
+    margin-left: 10px;
+}
+
+/* Traveller Input */
+.travellerInput {
     border: 0;
     text-align: center;
     border-left: 1px solid #dcdcdc;
@@ -157,85 +171,98 @@
     height: 31px;
     background: #f6f9ff;
 }
-.travellerInput:focus{
+
+.travellerInput:focus {
     outline: none;
 }
-.swapImageSection{
+
+/* Swap Image Section */
+.swapImageSection {
     width: 2%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.filterSideBar{
+
+/* Filter Sidebar */
+.filterSideBar {
     width: 20%;
     display: flex;
     flex-direction: column;
 }
-.bookNowInRow{
+
+/* Book Now Button in Row */
+.bookNowInRow {
     height: 100%;
     width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.durationFlightRecords{
+
+/* Duration of Flight Records */
+.durationFlightRecords {
     width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.flighttimeDurationSection{
+
+/* Flight Time and Duration Section */
+.flighttimeDurationSection {
     height: 100%;
     width: 40%;
     display: flex;
     gap: 7px;
 }
-.mobileViewBtn{
+
+/* Mobile View Button */
+.mobileViewBtn {
     display: none;
 }
-@media(max-width:600px){
-    .flightSearchSection{
+
+/* Media Query for Mobile View */
+@media (max-width: 600px) {
+    .flightSearchSection {
         height: auto;
     }
-    .searchBarFlightDiv{
+    .searchBarFlightDiv {
         flex-direction: column;
         height: auto;
         align-items: center;
         gap: 15px;
     }
-    .mainDivFlightRecordSearch{
+    .mainDivFlightRecordSearch {
         width: 100%;
         margin-top: 10px;
         border-radius: 5px;
         border: 1px solid #e0dede;
     }
-    .searchFromFlightRecord{
+    .searchFromFlightRecord,
+    .searchToFlightRecord {
         margin-bottom: 5px;
     }
-    .searchToFlightRecord{
-        margin-bottom: 5px;
-    }
-    .dividerFlightRecord{
+    .dividerFlightRecord {
         display: none;
     }
-    .swapImageSection{
+    .swapImageSection {
         display: none;
     }
-    .filterSideBar{
+    .filterSideBar {
         display: none;
     }
-    .bookNowInRow{
+    .bookNowInRow {
         display: none;
     }
-    .durationFlightRecords{
+    .durationFlightRecords {
         display: none;
     }
-    .flighttimeDurationSection{
+    .flighttimeDurationSection {
         justify-content: space-between;
     }
-    .mobileViewBtn{
+    .mobileViewBtn {
         display: block;
         width: 95%;
         margin-bottom: 5px;
