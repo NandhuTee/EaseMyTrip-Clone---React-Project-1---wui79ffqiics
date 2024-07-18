@@ -6,8 +6,8 @@ import Classes from "../Flights.module.css";
 import Divider from "@mui/material/Divider";
 import { useNavigate } from "react-router-dom";
 
-
 function FlightBooking() {
+  // State variables for managing errors, flight booking details, and user input
   const [hotelDetailError, setHotelDetailError] = useState(null);
   const [flightBookingDetailData, setFlightBookingDetailData] = useState([]);
   const {
@@ -20,13 +20,21 @@ function FlightBooking() {
     setBookingId,
     setBookingType,
   } = useAuth();
+
+  // Format departure day and date using moment.js
   const departureDay = moment(flightdepartureDate).format("ddd");
   const departureDate = moment(flightdepartureDate).format("DD MMM YYYY");
+
+  // Use the useNavigate hook for programmatic navigation
   const navigate = useNavigate();
+
+  // State variables for managing user input and input validation errors
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [firstNameError, setFirstNameError] = useState("");
   const [lastNameError, setLastNameError] = useState("");
+
+  // Fetch flight data based on flightBookingId
   const fetchSingleFlightData = async () => {
     try {
       const projectID = "uojmjpx76p25";
@@ -48,28 +56,37 @@ function FlightBooking() {
         setHotelDetailError(errorData.message);
       }
     } catch (error) {
-      console.error("Error fetching hotel data:", error);
-      setHotelDetailError("Failed to fetch hotel data");
+      console.error("Error fetching flight data:", error);
+      setHotelDetailError("Failed to fetch flight data");
     }
   };
+
+  // Fetch flight data on component mount
   useEffect(() => {
     fetchSingleFlightData();
   }, []);
 
+  // Handle payment and navigation to the payment page
   const handlePayment = (flightfare, bookingType, flightId) => {
+    // Validate first name input
     if (!firstName.trim()) {
       setFirstNameError("First Name is required");
       return;
     }
+
+    // Validate last name input
     if (!lastName.trim()) {
       setLastNameError("Last Name is required");
       return;
     }
+
+    // Set fare, booking ID, and booking type, then navigate to payment page
     setFare(flightfare);
     setBookingId(flightId);
     setBookingType(bookingType);
     navigate("/flightpayment");
   };
+
   return (
     <div>
       <Navbar />
@@ -239,7 +256,6 @@ function FlightBooking() {
                   </div>
                   <div className="w-[30%] text-[18px] text-[#d63b05] font-bold h-[35px] flex items-center gap-[5px]">
                     <i>₹</i> {flightBookingDetailData?.ticketPrice * seatCount}
-                    {/* * selectedSeats.length */}
                   </div>
                 </div>
               </div>
@@ -248,7 +264,12 @@ function FlightBooking() {
               <p
                 className="bg-[#ef6614] text-[#fff] text-[19px] h-[45px] cursor-pointer rounded-[40px] flex justify-center items-center"
                 onClick={() =>
-                  handlePayment(flightBookingDetailData?.ticketPrice,"flight",flightBookingDetailData?._id)}
+                  handlePayment(
+                    flightBookingDetailData?.ticketPrice,
+                    "flight",
+                    flightBookingDetailData?._id
+                  )
+                }
               >
                 Continue Booking
               </p>
@@ -259,4 +280,5 @@ function FlightBooking() {
     </div>
   );
 }
+
 export default FlightBooking;

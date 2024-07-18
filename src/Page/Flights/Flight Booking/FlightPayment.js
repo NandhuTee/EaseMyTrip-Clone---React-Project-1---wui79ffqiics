@@ -7,16 +7,19 @@ import Divider from "@mui/material/Divider";
 import PaymentSuccessfull from "../../Payment Successfull/PaymentSuccessfull";
 
 function FlightPayMent() {
-  const [selectedOption, setSelectedOption] = useState("UPI");
-  const bartoken = localStorage.getItem("token");
-  const [showSuccessfull, setShowSuccessfull] = useState(false);
-  const { fare, bookingId, bookingType, seatCount } = useAuth();
-  const [allFieldsFilled, setAllFieldsFilled] = useState(false);
+  // State variables
+  const [selectedOption, setSelectedOption] = useState("UPI"); // State for selected payment option (UPI or Debit/Credit Card)
+  const bartoken = localStorage.getItem("token"); // Retrieve token from local storage
+  const [showSuccessfull, setShowSuccessfull] = useState(false); // State to control visibility of payment success message
+  const { fare, bookingId, bookingType, seatCount } = useAuth(); // Use authentication context to get booking details
+  const [allFieldsFilled, setAllFieldsFilled] = useState(false); // State to track if all required fields are filled
 
+  // Handle click on payment option (UPI or Debit/Credit Card)
   const handleOptionClick = (option) => {
     setSelectedOption(option);
   };
 
+  // Handle input change for UPI ID or card details
   const handleInputChange = (event) => {
     const isUPIOption = selectedOption === "UPI";
     const isDebitCreditCardOption = selectedOption === "DebitCreditCard";
@@ -24,18 +27,20 @@ function FlightPayMent() {
     let isValid = false;
 
     if (isUPIOption) {
+      // Validate UPI ID
       const isValidEmail = /^[^\s@]+@[^\s@]+$/.test(event.target.value.trim());
       isValid = isValidEmail;
     } else if (isDebitCreditCardOption) {
+      // Validate card details (assume non-empty for simplicity)
       isValid = event.target.value.trim() !== "";
     }
 
-    setAllFieldsFilled(isValid);
+    setAllFieldsFilled(isValid); // Update state based on validation
   };
 
+  // Fetch payment data from API on click of "Make Payment"
   const fetchPaymentData = () => {
     if (allFieldsFilled) {
-     
       const api =
         "https://academics.newtonschool.co/api/v1/bookingportals/booking";
 
@@ -56,7 +61,7 @@ function FlightPayMent() {
         }),
       }).then((response) => {
         if (response.ok) {
-          setShowSuccessfull(!showSuccessfull);
+          setShowSuccessfull(!showSuccessfull); // Show payment success message
         }
       });
     }
@@ -64,9 +69,10 @@ function FlightPayMent() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar /> {/* Render the Navbar component */}
       <div className="w-[100%] h-[100%] bg-[#e8f2fa] flex justify-center">
         <div className=" w-[90%] h-[100%] flex max-[600px]:flex-col flex-row gap-[20px] justify-between mb-[20px]">
+          {/* Payment options section */}
           <div className=" w-[70.5%] max-[600px]:w-[100%] mt-[20px]">
             <div className={Classes.personalDetailFlight}>
               <div className={Classes.bookingHeader}>
@@ -75,6 +81,7 @@ function FlightPayMent() {
               </div>
               <div className="w-[100%] h-[100%] flex ">
                 <div className={Classes.paymentLeftSection}>
+                  {/* UPI payment option */}
                   <div
                     style={{
                       borderTop: "2px solid lightgray",
@@ -94,6 +101,7 @@ function FlightPayMent() {
                         marginRight: "10px",
                       }}
                       src="https://starlinebattery.com/wp-content/uploads/2022/08/UPI_logo_PNG-300x300-1.jpg"
+                      alt="UPI Logo"
                     />
                     <div>
                       <h3 style={{ color: "#008cff" }}>UPI Options</h3>
@@ -102,6 +110,7 @@ function FlightPayMent() {
                       </p>
                     </div>
                   </div>
+                  {/* Debit/Credit Card payment option */}
                   <div
                     style={{
                       borderTop: "2px solid lightgray",
@@ -122,6 +131,7 @@ function FlightPayMent() {
                         marginRight: "10px",
                       }}
                       src="https://banner2.cleanpng.com/20180630/iyq/kisspng-credit-card-debit-card-clip-art-5b37907f1a4f07.4745129515303681271078.jpg"
+                      alt="Credit/Debit Card Logo"
                     />
                     <div>
                       <h4>Credit/Cebit/ATM Card</h4>
@@ -131,6 +141,7 @@ function FlightPayMent() {
                     </div>
                   </div>
                 </div>
+                {/* Payment input section */}
                 <div className="w-[67%] max-[600px]:w-[100%] pt-[2%] pb-[2%] pl-[3%]">
                   {selectedOption === "UPI" && (
                     <div className="w-[100%] mt-[13px] flex flex-col justify-center items-center">
@@ -141,9 +152,10 @@ function FlightPayMent() {
                       <div className="w-[100%] mt-[6px] flex">
                         <div className="w-[49%]">
                           <input
-                          type="email"
+                            type="email"
                             className={Classes.paymentUpiInput}
                             onChange={handleInputChange}
+                            placeholder="Enter Your UPI ID"
                           />
                         </div>
                         <div
@@ -156,9 +168,11 @@ function FlightPayMent() {
                           <img
                             style={{ width: "150px", marginLeft: "10px" }}
                             src={upiQr}
+                            alt="UPI QR Code"
                           />
                         </div>
                       </div>
+                      {/* Total fare display and payment button */}
                       <div className="w-[100%] mt-[25px] flex items-center justify-between">
                         <div className="w-[50%] flex items-center">
                           <span className=" w-auto text-[#333333] text-[14px] font-bold pt-[5px] flex items-center gap-[5px]">
@@ -169,6 +183,7 @@ function FlightPayMent() {
                             {fare * seatCount}
                           </span>
                         </div>
+                        {/* Payment button */}
                         <div
                           className={`w-[40%] items-center flex justify-end  ${
                             allFieldsFilled ? "cursor-pointer" : "cursor-not-allowed"
@@ -187,9 +202,10 @@ function FlightPayMent() {
                       </div>
                     </div>
                   )}
+                  {/* Debit/Credit Card payment section */}
                   {selectedOption === "DebitCreditCard" && (
                     <div style={{ padding: "10px 20px 20px 20px" }}>
-                      <div className="w -[100%] flex flex-col">
+                      <div className="w-[100%] flex flex-col">
                         <label className="text-[15px] pt-[3%]">
                           Card Number
                         </label>
@@ -200,7 +216,7 @@ function FlightPayMent() {
                           onChange={handleInputChange}
                         />
                       </div>
-                      <div className="w -[100%] flex flex-col">
+                      <div className="w-[100%] flex flex-col">
                         <label className="text-[15px] pt-[3%]">
                           Name on card
                         </label>
@@ -242,6 +258,7 @@ function FlightPayMent() {
                           </div>
                         </div>
                       </div>
+                      {/* Total fare display and payment button */}
                       <div className="w-[100%] mt-[25px] flex items-center justify-between">
                         <div className="w-[50%] flex items-center">
                           <span className=" w-auto text-[#333333] text-[14px] font-bold pt-[5px] flex items-center gap-[5px]">
@@ -252,6 +269,7 @@ function FlightPayMent() {
                             {fare * seatCount}
                           </span>
                         </div>
+                        {/* Payment button */}
                         <div
                           className={`w-[40%] items-center flex justify-end  ${
                             allFieldsFilled ? "cursor-pointer" : "cursor-not-allowed"
@@ -268,6 +286,7 @@ function FlightPayMent() {
                           </span>
                         </div>
                       </div>
+                      {/* Terms and conditions */}
                       <p className="w-[100%] text-[12px] mt-[20px]">
                         By continuing to pay, I understand and agree with the{" "}
                         <span style={{ color: "#008cff" }}>privacy policy</span>,
@@ -283,6 +302,7 @@ function FlightPayMent() {
               </div>
             </div>
           </div>
+          {/* Price summary section */}
           <div className="w-[26%] max-[600px]:w-[100%] mt-[60px] flex flex-col">
             <div className={Classes.flightBookingAmont}>
               <div className={Classes.flighBokkingAmountHeader}>
@@ -291,6 +311,7 @@ function FlightPayMent() {
                 </div>
               </div>
               <div className=" w-[100%]">
+                {/* Fare details */}
                 <div className="w-[100%] border-b-2  border-b-[#e5e3e3] flex justify-between">
                   <div className="w-[66%] pl-[4%] text-[13px] text-[#1a1a1a] h-[35px] flex items-center">
                     Adult x 1
@@ -300,15 +321,17 @@ function FlightPayMent() {
                   </div>
                 </div>
                 <Divider flexItem />
+                {/* Seat count */}
                 <div className="w-[100%] border-b-2  border-b-[#e5e3e3] flex justify-between">
                   <div className="w-[66%] pl-[4%] text-[13px] text-[#1a1a1a] h-[35px] flex items-center">
-                    Travelare
+                    Traveller(s)
                   </div>
                   <div className="w-[30%] text-[#1a1a1a] text-[12px] h-[35px] font-[600] flex items-center gap-[5px]">
                     {seatCount} Traveller(s)
                   </div>
                 </div>
                 <Divider flexItem />
+                {/* Grand total */}
                 <div className="w-[100%] flex justify-between">
                   <div className="w-[66%] pl-[4%] text-[18px] text-[#d63b05] h-[35px] font-bold flex items-center">
                     Grand Total
@@ -321,6 +344,7 @@ function FlightPayMent() {
             </div>
           </div>
         </div>
+        {/* Show payment success message */}
         {showSuccessfull && <PaymentSuccessfull />}
       </div>
     </div>

@@ -1,11 +1,16 @@
 import { createContext, useContext, useState } from "react";
+
+// Create a context for authentication
 const AuthContext = createContext();
 
+// Custom hook to use the AuthContext
 export function useAuth() {
   return useContext(AuthContext);
 }
 
+// AuthProvider component to provide authentication context
 export function AuthProvider({ children }) {
+  // Define state variables for various travel-related data
   const [hotelLocation, setHotelLocation] = useState("Mumbai");
   const [hotelDepartureDate, setHotelDepartureDate] = useState("");
   const [flightdepartureDate, setFlightDepartureDate] = useState("");
@@ -33,10 +38,10 @@ export function AuthProvider({ children }) {
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [openLogin, setOpenLogin] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
-  var [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [flightBookingId, setFlightBookingId] = useState("");
   const [busBookingId, setBusBookingId] = useState("");
-  const [travelare, setTravelare] = useState("");
+  const [travelare, setTravelare] = useState(""); // Define travelare state variable
   const [trainBookingId, setTrainBookingId] = useState("");
   const [hotelBookingId, setHotelBookingId] = useState("");
   const [seatCount, setSeatCount] = useState(1);
@@ -54,7 +59,9 @@ export function AuthProvider({ children }) {
   const [departureTime, setDepartureTime] = useState("");
   const [arrivalTime, setArrivalTime] = useState("");
   const [duration, setDuration] = useState("");
+
   return (
+    // Provide the state variables and setters to children components
     <AuthContext.Provider
       value={{
         setHotelLocation,
@@ -73,35 +80,62 @@ export function AuthProvider({ children }) {
         setSelectedDayCheckOut,
         flightdepartureDate,
         setFlightDepartureDate,
-        flightId, setFlightId,
-        traindepartureDate, setTrainDepartureDate,
-        trainCity, setTrainCity,
-        trainToCity, setTrainToCity,
-        busCity, setBusCity,
-        busToCity, setBusToCity,
-        busdepartureDate, setBusDepartureDate,
-        selectedSeats, setSelectedSeats,
-        openLogin, setOpenLogin,
-        openSignUp, setOpenSignUp,
-        isLoggedIn, setIsLoggedIn,
-        flightBookingId, setFlightBookingId,
-        seatCount, setSeatCount,
-        lastName, setGuestLastName,
-        firstName, setGuestName,
-        seatHotelCount, setSeatHotelCount,
-        seatAdultsCount, setSeatAdultsCount,seatChildrenCount, setSeatChildrenCount,
-        seatInfantCount, setSeatInfantCount,
-        seatHotelAdultsCount, setSeatHotelAdultsCount,
-        seatHotelChildrenCount, setSeatHotelChildrenCount,
-        hotelBookingId, setHotelBookingId,
-        busBookingId, setBusBookingId,
-        trainBookingId, setTrainBookingId,
-        fare, setFare,
-        bookingId, setBookingId,
-        bookingType, setBookingType,
-        travelare, setTravelare,
-
-
+        flightId,
+        setFlightId,
+        traindepartureDate,
+        setTrainDepartureDate,
+        trainCity,
+        setTrainCity,
+        trainToCity,
+        setTrainToCity,
+        busCity,
+        setBusCity,
+        busToCity,
+        setBusToCity,
+        busdepartureDate,
+        setBusDepartureDate,
+        selectedSeats,
+        setSelectedSeats,
+        openLogin,
+        setOpenLogin,
+        openSignUp,
+        setOpenSignUp,
+        isLoggedIn,
+        setIsLoggedIn,
+        flightBookingId,
+        setFlightBookingId,
+        seatCount,
+        setSeatCount,
+        lastName,
+        setGuestLastName,
+        firstName,
+        setGuestName,
+        seatHotelCount,
+        setSeatHotelCount,
+        seatAdultsCount,
+        setSeatAdultsCount,
+        seatChildrenCount,
+        setSeatChildrenCount,
+        seatInfantCount,
+        setSeatInfantCount,
+        seatHotelAdultsCount,
+        setSeatHotelAdultsCount,
+        seatHotelChildrenCount,
+        setSeatHotelChildrenCount,
+        hotelBookingId,
+        setHotelBookingId,
+        busBookingId,
+        setBusBookingId,
+        trainBookingId,
+        setTrainBookingId,
+        fare,
+        setFare,
+        bookingId,
+        setBookingId,
+        bookingType,
+        setBookingType,
+        travelare, // Add travelare to the value object
+        setTravelare, // Add setTravelare to the value object
       }}
     >
       {children}
