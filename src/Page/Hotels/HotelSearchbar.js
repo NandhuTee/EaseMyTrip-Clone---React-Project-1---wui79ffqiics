@@ -5,7 +5,7 @@ import { Divider } from "@mui/material";
 import Classes from "./Hotels.module.css";
 import { useAuth } from "../../components/Context";
 import "react-datepicker/dist/react-datepicker.css";
-
+// State for toggling the traveller dropdown
 function HotelSearchbar() {
   const [HotelTraveller, setHotelTraveller] = useState(false);
   const {
@@ -34,7 +34,7 @@ function HotelSearchbar() {
       readOnly
     />
   );
-
+// Custom input component for DatePicker to format dates
   const CustomInputCheckout = ({ value, onClick }) => (
     <input
       className={Classes.hotelInputDatepickOut}
@@ -44,19 +44,19 @@ function HotelSearchbar() {
       readOnly
     />
   );
-
+// Handler for setting the hotel location
   const handleSetLocation = (e) => {
     setHotelLocation(e.target.value);
   };
-
+// Handler for initiating the search
   const handleSearch = () => {
     setSearchHotelResults([]);
   };
-
+// Toggle the traveller dropdown
   const handleHotelTraveller = () => {
     setHotelTraveller(!HotelTraveller);
   };
-
+ // Increment and decrement functions for adult and children counts
   const incrementHotelAdultsSeatCount = () => {
     setSeatHotelCount((prevCount) => prevCount + 1);
     setSeatHotelAdultsCount((prevCount) => prevCount + 1);

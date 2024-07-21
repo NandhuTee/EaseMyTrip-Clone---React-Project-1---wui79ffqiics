@@ -1,33 +1,40 @@
-.hotelSearchSection{
+.hotelSearchSection {
+    /* Styling for the main hotel search section */
     background-color: #2f81ed;
     background-image: linear-gradient(to right, #2F80ED, #56CCF2);
-   width: 100%;
-   height: 40vh;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.headSearchbar{
+
+.headSearchbar {
+    /* Styling for the header search bar container */
     display: flex;
     flex-direction: row;
     justify-content: end;
     width: 100%;
     height: 5vh;  
 }
-.captionHotel{
+
+.captionHotel {
+    /* Styling for the caption hotel section */
     width: 50%;
     margin-right: 9.6em;
 }
-.searchLowestH1{
+
+.searchLowestH1 {
+    /* Styling for the main search heading */
     float: right;
     font-size: 20px !important;
     color: #fff;
     font-weight: 600;
-    
 }
 
-.searchBar{
+.searchBar {
+    /* Styling for the main search bar container */
     background-color: #fff;
     height: 15vh;
     width: 80vw;
@@ -35,7 +42,9 @@
     overflow: hidden;
     border-radius: 6px;
 }
-.mainDivSearch{
+
+.mainDivSearch {
+    /* Styling for the main search input container */
     height: 100%;
     width: 26vw;
     display: flex;
@@ -43,18 +52,26 @@
     align-items: center;
     cursor: pointer;
 }
-.mainDivSearch:hover{
+
+.mainDivSearch:hover {
+    /* Background color change on hover for main search input */
     background-color: #bfdef85d;
 }
-.searchFrom{
+
+.searchFrom {
+    /* Styling for the search 'from' input container */
     height: 90%;
     width: 95%;
 }
-.inputHeading{
+
+.inputHeading {
+    /* Styling for the input heading, including gap between icon and text */
     display: flex;
     gap: 10px;
 }
-.inputhotel{
+
+.inputhotel {
+    /* Styling for the hotel input field */
     height: 7vh;
     width: 100%;
     border: 0.5px solid lightgray;
@@ -66,12 +83,15 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
-    
 }
-.inputhotel:focus{
+
+.inputhotel:focus {
+    /* Remove outline when the input field is focused */
     outline: none;
 }
-.dropMyLocation{
+
+.dropMyLocation {
+    /* Styling for the dropdown location container */
     box-shadow: 1px 2px 5px black;
     background-color: white;
     border-radius: 5px;
@@ -84,80 +104,95 @@
     margin-top: 250px;
     position: absolute;
     overflow-y: auto;
-   
 }
-.pInput{
+
+.pInput {
+    /* Styling for the input placeholder text */
     font-weight: 500;
     color: #737373;
     font-size: 14px;
 }
-.searchTo{
+
+.searchTo {
+    /* Styling for the search 'to' input container */
     height: 12vh;
     width: 20vw;
 }
-.hotelhomesSectionCheckIn{
+
+.hotelhomesSectionCheckIn {
+    /* Styling for the check-in section container */
     height: 100%;
     width: 14vw;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    
 }
-.hotelhomesSectionCheckIn:hover{
+
+.hotelhomesSectionCheckIn:hover {
+    /* Background color change on hover for check-in section */
     background-color: #bfdef85d;
 }
 
-.hotelhomeCheckIn{
-    
+.hotelhomeCheckIn {
+    /* Styling for the check-in input field container */
     width: 92%;
     height: 90%;
 }
-.hotelCheckOut{
-   
+
+.hotelCheckOut {
+    /* Styling for the check-out input field container */
     width: 92%;
     height: 90%;
 }
-.checkOutHeading{
+
+.checkOutHeading, .checkInHeading {
+    /* Styling for the check-out and check-in heading containers */
     display: flex;
     gap: 10px;
 }
-.checkInHeading{
-    display: flex;
-    gap: 10px;
-}
-.searchReturn{
+
+.searchReturn {
+    /* Styling for the search return container */
     height: 100%;
     width: 14vw;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-   
 }
-.searchReturn:hover{
+
+.searchReturn:hover {
+    /* Background color change on hover for return search section */
     background-color: #bfdef85d;
 }
-.searchTraveller{
+
+.searchTraveller {
+    /* Styling for the search traveler container */
     height: 100%;
     width: 14vw;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    
 }
-.searchTraveller:hover{
+
+.searchTraveller:hover {
+    /* Background color change on hover for search traveler section */
     background-color: #bfdef85d;
 }
-.hotelChooseRooms{
+
+.hotelChooseRooms {
+    /* Styling for the hotel room selection container */
     width: 92%;
     height: 90%;
-    display:flex;
+    display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.searchButton{
+
+.searchButton {
+    /* Styling for the search button */
     height: 100%;
     width: 15%;
     background-color: #ef6614;
@@ -168,14 +203,17 @@
     cursor: pointer;
 }
 
-.inputFormSection{
+.inputFormSection {
+    /* Styling for the input form section */
     width: 19vw;
     height: 8vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.formSearchBox{
+
+.formSearchBox {
+    /* Styling for the input form search box */
     height: 7vh;
     width: 90%;
     border: none;
@@ -187,27 +225,31 @@
     background-color: transparent;
     cursor: pointer;
 }
-.formSearchBox:focus{
+
+.formSearchBox:focus {
+    /* Remove outline when the form search box is focused */
     outline: none;
 }
 
-/* fo To Modal */
-.inputToSection{
+/* Styling for the 'To' modal input section */
+.inputToSection {
     width: 19vw;
     height: 8vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.toSearchBox{
+
+.toSearchBox {
+    /* Styling for the 'To' search box input */
     height: 7vh;
     width: 95%;
     border: 0.5px solid lightgray;
     border-radius: 5px;
 }
 
-/* QR Code section */
-.hotelHomeQr{
+/* QR Code section styling */
+.hotelHomeQr {
     height: 25vh;
     display: flex;
     flex-direction: column;
@@ -215,17 +257,22 @@
     align-items: center;
     margin-top: 5px;
 }
-.qrImageDiv{
+
+.qrImageDiv {
     height: 84%;
     width: 82%;
     border-radius: 10px;
 }
-.imageQr{
+
+.imageQr {
+    /* Styling for the QR code image */
     width: 100%;
     height: 100%;
     border-radius: 10px;
 }
-.offerHeading{
+
+.offerHeading {
+    /* Styling for the offers heading container */
     height: 5vh;
     margin-top: 10px;
     display: flex;
@@ -233,16 +280,18 @@
     justify-content: center;
     align-items: center;
 }
-.headingDiv{
+
+.headingDiv {
+    /* Styling for the heading container */
     height: 90%;
     width: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-/* Offers */
-.hotelOffersSection{
-    /* border: 1px solid black; */
+
+/* Offers section styling */
+.hotelOffersSection {
     height: 45vh;
     margin-top: 20px;
     width: 100%;
@@ -251,56 +300,62 @@
     align-items: center;
     overflow-y: auto;
     gap: 10px;
-    
 }
 
-.hotelOfersBoxes{
+.hotelOfersBoxes {
+    /* Styling for the individual offer boxes */
     height: 95%;
     width: 22%;
-  box-sizing: border-box; 
-  flex: 1 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: 10px;
-  background-color: rgba(250, 253, 255, 1);
-  box-shadow: 0 0 7px rgb(0 -1 6 / 6%) inset;
-  border-radius: 15px;
-  border: 1px solid #F5F5F5;
-
+    box-sizing: border-box; 
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+    background-color: rgba(250, 253, 255, 1);
+    box-shadow: 0 0 7px rgb(0 -1 6 / 6%) inset;
+    border-radius: 15px;
+    border: 1px solid #F5F5F5;
 }
-.offersImagediv{
+
+.offersImagediv {
+    /* Styling for the offers image container */
     height: 95%;
     width: 95%;
-    /* border: 1px solid blue; */
     margin-top: 7px;
-
 }
-.hotelOffersImage{
-    /* border: 2px solid greenyellow; */
+
+.hotelOffersImage {
+    /* Styling for the hotel offers image */
     height: 70%;
     width: 100%;
     border-radius: 10px;
 }
-.imageOffersHotel{
+
+.imageOffersHotel {
+    /* Styling for the image inside the hotel offers */
     width: 100%;
     height: 100%;
     border-radius: 10px;
 }
 
-.descriptionHoteloffer{
+.descriptionHoteloffer {
+    /* Styling for the description of hotel offers */
     font-size: 13px;
     font-weight: 600;
     width: 100%;
     color: #172033;
     margin-top: 10px;
-    /* border: 1px solid red; */
 }
-.headingOffers{
+
+.headingOffers {
+    /* Styling for the heading offers text */
     font-size: 28px !important;
     font-weight: 700 !important;
 }
-.travellerInput{
+
+.travellerInput {
+    /* Styling for the traveler input field */
     border: 0;
     text-align: center;
     border-left: 1px solid #dcdcdc;
@@ -310,113 +365,114 @@
     height: 31px;
     background: #f6f9ff;
 }
-.travellerInput:focus{
+
+.travellerInput:focus {
+    /* Remove outline when traveler input field is focused */
     outline: none;
 }
-.dropDownArrow{
+
+.dropDownArrow {
+    /* Styling for the dropdown arrow icon */
     border: solid black;
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 3px;
-    transform: rotate( 45deg );
+    transform: rotate(45deg);
     position: relative;
     top: -1px;
-    margin-left: 10px 
+    margin-left: 10px;
 }
-@media(max-width:600px){
-    .hotelSearchSection{
+
+/* Media queries for responsive design */
+@media(max-width: 600px) {
+    .hotelSearchSection {
         justify-content: space-evenly;
         height: 60vh;
     }
-    .headSearchbar{
+    .headSearchbar {
         height: auto;
         justify-content: center;
     }
-    .captionHotel{
+    .captionHotel {
         width: 80%;
-        margin-right:0;
+        margin-right: 0;
     }
-    .searchBar{
+    .searchBar {
         flex-direction: column;
         height: auto;
         align-items: center;
     }
-    .mainDivSearch{
+    .mainDivSearch {
         width: 100%;
         margin-top: 10px;
         border-bottom: 1px solid #e0dede;
     }
-    .inputFormSection{
+    .inputFormSection {
         width: 100%;
         height: 5vh;
         margin-bottom: 5px;
     }
-    .dividerHotel{
+    .dividerHotel {
         display: none;
     }
-    .dropMyLocation{
-    width: 70%;
-    margin-left: 0;
-    z-index: 1;
-    
+    .dropMyLocation {
+        width: 70%;
+        margin-left: 0;
+        z-index: 1;
     }
-    .hotelhomesSectionCheckIn{
+    .hotelhomesSectionCheckIn {
         width: 100%;
         margin-top: 5px;
         border-bottom: 1px solid #e0dede;
     }
-    .searchReturn{
+    .searchReturn {
         width: 100%;
         margin-top: 5px;
         border-bottom: 1px solid #e0dede;
     }
-    .searchTraveller{
+    .searchTraveller {
         width: 100%;
         margin-top: 5px;
         border-bottom: 1px solid #e0dede;
     }
-    .searchButton{
+    .searchButton {
         width: 95%;
         border-radius: 40px;
         margin-bottom: 10px;
         margin-top: 10px;
     }
-    .h3SubmitBtnHotel{
+    .h3SubmitBtnHotel {
         height: 4vh;
         display: flex;
         align-items: center;
     }
-    .inputhotel{
+    .inputhotel {
         height: 4vh;
         margin-bottom: 5px;
     }
-    .hotelChooseRooms{
+    .hotelChooseRooms {
         margin-bottom: 5px;
     }
-    .hotelHomeQr{
+    .hotelHomeQr {
         display: none;
     }
-    .offerHeading{
+    .offerHeading {
         height: auto;
         width: 100%;
         flex-direction: row;
-
     }
-    .headingDiv{
+    .headingDiv {
         width: 100%;
     }
-    .hotelOfersBoxes{
+    .hotelOfersBoxes {
         width: 50%;
     }
-    .offersImagediv{
+    .offersImagediv {
         display: flex;
         flex-direction: column;
         gap: 10px;
-     }
-     .hotelOffersImage{
+    }
+    .hotelOffersImage {
         height: 50%;
-     }
+    }
 }
-
-
-/* for testing */
