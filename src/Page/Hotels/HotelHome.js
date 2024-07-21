@@ -9,6 +9,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import {useNavigate } from "react-router-dom";
 
 function HotelHome() {
+  // Extract state and setter functions from context
   const {
     setHotelLocation,
     hotelLocation,
@@ -17,12 +18,15 @@ function HotelHome() {
     isSelectedDayCheckOut, setSelectedDayCheckOut,seatHotelCount, setSeatHotelCount,seatHotelAdultsCount,
     setSeatHotelAdultsCount,seatHotelChildrenCount,setSeatHotelChildrenCount
   } = useAuth();
+  // Navigation hook
   const navigate = useNavigate();
+   // Component state
   const [offers, setOffers] = useState([]);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [selectedOfferType, setSelectedOfferType] = useState("HOTELS");
   const [loading, setLoading] = useState(true);
   const [HotelTraveller, setHotelTraveller] = useState(false);
+  // List of locations
   const locations = [
     "Mumbai",
     "Delhi",
@@ -64,8 +68,9 @@ function HotelHome() {
     "Raipur",
     "Srinagar",
   ];
+   // Filtered locations state
   const [filteredLocations, setFilteredLocations] = useState(locations);
-
+// Custom input components for date pickers
   const CustomInput = ({ value, onClick }) => (
     <input
       type="text"
@@ -84,9 +89,12 @@ function HotelHome() {
       readOnly
     />
   );
+
+  // Handle search button click
   const handleSearch = () => {
     navigate("/hotels");
   };
+  // Open and close dropdown for location selection
   const openDropdown = () => {
     setDropdownOpen(true);
   };
@@ -95,9 +103,11 @@ function HotelHome() {
     console.log("Closing dropdown");
     setDropdownOpen(false);
   };
+  // Handle location click
   const handleLocationClick = (location) => {
     setHotelLocation(location);
   };
+  // Handle location input change for filtering
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
     setHotelLocation(inputValue);
@@ -108,7 +118,7 @@ function HotelHome() {
 
     setFilteredLocations(filtered);
   };
-
+// Fetch offers on component mount and when selectedOfferType changes
   useEffect(() => {
     const fetchOffers = async () => {
       try {
@@ -135,11 +145,11 @@ function HotelHome() {
 
     fetchOffers();
   }, [selectedOfferType]);
-
+// Toggle traveller dropdown
   const handleHotelTraveller = () => {
     setHotelTraveller(!HotelTraveller);
   };
-
+// Increment and decrement seat counts for adults and children
   const incrementHotelAdultsSeatCount = () => {
     setSeatHotelCount((prevCount) => prevCount + 1);
     setSeatHotelAdultsCount((prevCount) => prevCount + 1);
@@ -160,8 +170,9 @@ function HotelHome() {
   };
   return (
     <div className={Classes.flightsSection}>
+      {/* Navbar component */}
       <Navbar />
-
+{/* Hotel search section */}
       <div className={Classes.hotelSearchSection}>
         <div className={Classes.headSearchbar}>
           <div className={Classes.captionHotel}>
@@ -201,6 +212,7 @@ function HotelHome() {
               </div>
             </div>
           </div>
+          {/* Divider */}
           <Divider orientation="vertical" className={Classes.dividerHotel}/>
           <div className={Classes.hotelhomesSectionCheckIn}>
             <div className={Classes.hotelhomeCheckIn}>
@@ -217,6 +229,7 @@ function HotelHome() {
               />
             </div>
           </div>
+          {/* Divider */}
           <Divider orientation="vertical" className={Classes.dividerHotel}/>
           <div className={Classes.searchReturn}>
             <div className={Classes.hotelCheckOut}>
@@ -232,6 +245,7 @@ function HotelHome() {
               />
             </div>
           </div>
+           {/* Divider */}
           <Divider orientation="vertical" className={Classes.dividerHotel}/>
           <div className={Classes.searchTraveller}>
             <div onClick={handleHotelTraveller} className={Classes.hotelChooseRooms}>
@@ -245,6 +259,7 @@ function HotelHome() {
               </div>
             </div>
           </div>
+          {/* Traveller dropdown */}
           {HotelTraveller && 
           <div className="w-[15%] max-[600px]:w-[80%] h-55 absolute bg-slate-50 lg:mt-14 mt-[19em] p-2 rounded lg:ml-[52em] ml-[0] z-10 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
             <div className=" w-[98%] flex flex-col gap-[5px]">
@@ -290,6 +305,7 @@ function HotelHome() {
           />
         </div>
       </div>
+      {/* Offers section */}
       <div className={Classes.offerHeading}>
         <div className={Classes.headingDiv}>
           <h3 className={Classes.headingOffers}>Exclusive Offers</h3>
