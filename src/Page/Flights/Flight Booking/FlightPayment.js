@@ -5,7 +5,8 @@ import upiQr from "../../../Design/PhonePayUpiQr.jpg";
 import { useAuth } from "../../../components/Context";
 import Divider from "@mui/material/Divider";
 //import PaymentSuccessfull from "../../PaymentSuccessfull/PaymentSuccessfull";
-import PaymentSuccessfull from "../../Payment Successfull";
+import PaymentSuccessfull from "../../Payment Successfull/PaymentSuccessfull";
+
 
 
 function FlightPayMent() {
