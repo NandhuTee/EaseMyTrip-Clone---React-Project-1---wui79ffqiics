@@ -4,7 +4,9 @@ import Classes from "../Flights.module.css";
 import upiQr from "../../../Design/PhonePayUpiQr.jpg";
 import { useAuth } from "../../../components/Context";
 import Divider from "@mui/material/Divider";
-import PaymentSuccessfull from "../../Payment Successfull/PaymentSuccessfull";
+//import PaymentSuccessfull from "../../PaymentSuccessfull/PaymentSuccessfull";
+import PaymentSuccessfull from "../../Payment Successfull";
+
 
 function FlightPayMent() {
   // State variables
