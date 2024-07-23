@@ -13,7 +13,8 @@ import FlightsRecords from "../Page/Flights/Flights Records/FlightsRecords"; // 
 import PrivateRoute from "./PrivateRoute"; // Importing PrivateRoute component
 import FlightBooking from "../Page/Flights/Flight Booking/FlightBooking"; // Importing FlightBooking component
 import HotelBooking from "../Page/Hotels/Hotel Booking/HotelBooking"; // Importing HotelBooking component
-import FlightPayMent from "../Page/Flights/Flight Booking/FlightPayMent"; // Importing FlightPayMent component
+import FlightPayMent from "../../src/Page/Flights/Flight Booking/FlightBooking";
+
 import HotelPayment from "../Page/Hotels/Hotel Booking/HotelPayment"; // Importing HotelPayment component
 
 import MyBooking from "./NavBar/MyBooking"; // Importing MyBooking component
