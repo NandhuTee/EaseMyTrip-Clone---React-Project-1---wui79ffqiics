@@ -84,7 +84,7 @@ function FlightBooking() {
     setFare(flightfare);
     setBookingId(flightId);
     setBookingType(bookingType);
-    navigate("/flightpayment");
+    navigate("/FlightPayMent"); 
   };
 
   return (
