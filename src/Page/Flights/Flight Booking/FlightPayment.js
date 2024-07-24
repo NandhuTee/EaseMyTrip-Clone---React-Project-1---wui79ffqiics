@@ -9,7 +9,7 @@ import PaymentSuccessfull from "../../Payment Successfull/PaymentSuccessfull";
 
 
 
-function FlightPayMent() {
+function FlightPayment() {
   // State variables
   const [selectedOption, setSelectedOption] = useState("UPI"); // State for selected payment option (UPI or Debit/Credit Card)
   const bartoken = localStorage.getItem("token"); // Retrieve token from local storage
@@ -354,4 +354,4 @@ function FlightPayMent() {
   );
 }
 
-export default FlightPayMent;
+export default FlightPayment;

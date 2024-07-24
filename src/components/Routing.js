@@ -13,7 +13,7 @@ import FlightsRecords from "../Page/Flights/Flights Records/FlightsRecords"; // 
 import PrivateRoute from "./PrivateRoute"; // Importing PrivateRoute component
 import FlightBooking from "../Page/Flights/Flight Booking/FlightBooking"; // Importing FlightBooking component
 import HotelBooking from "../Page/Hotels/Hotel Booking/HotelBooking"; // Importing HotelBooking component
-import FlightPayMent from "../Page/Flights/Flight Booking/FlightPayMent";
+import FlightPayment from "../Page/Flights/Flight Booking/FlightPayment";
 
 import HotelPayment from "../Page/Hotels/Hotel Booking/HotelPayment"; // Importing HotelPayment component
 
@@ -36,7 +36,7 @@ function Routing() {
 
                 {/* Protected routes */}
                 <Route element={<PrivateRoute />}>
-                    <Route path="/flightpayment" element={<FlightPayMent />} />
+                    <Route path="/flightpayment" element={<FlightPayment />} />
                     <Route path="/hotelpayment" element={<HotelPayment />} />
                     <Route path="/flightbooking" element={<FlightBooking />} />
                     <Route path="/hotelbooking" element={<HotelBooking />} />
