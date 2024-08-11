@@ -1,4 +1,5 @@
 **Project Name:** Ease My Trip Clone
+
 **Objective/Scope:**
 
 Develop a fully functional clone of the Ease My Trip platform, focusing on seamless user experience and efficient navigation.
@@ -13,11 +14,11 @@ The importance of responsive design was highlighted, particularly in components 
 
 **Skills/Tools Used:**
 
-Frontend Development: React.js, React Router for routing and component management.
-State Management: Context API for managing authentication states across components.
-UI Components: Material-UI for implementing responsive and consistent UI components like Modals and buttons.
-API Integration: Fetch API for handling login and data retrieval from backend services.
-Version Control: GitHub for code management and collaboration.
+- Frontend Development: React.js, React Router for routing and component management.
+- State Management: Context API for managing authentication states across components.
+- UI Components: Material-UI for implementing responsive and consistent UI components like Modals and buttons.
+- API Integration: Fetch API for handling login and data retrieval from backend services.
+- Version Control: GitHub for code management and collaboration.
 
 **Project Impact:**
 
